@@ -1,32 +1,32 @@
-"use client"
-import styles from "../styles/MainPage/global.module.scss"
-import React, { useEffect, useRef, useState } from "react"
-import Description from "@/components/Descr"
-import Windows from "../images/windows.png"
-import Java from "../images/Java.png"
-import Image from "next/image"
-import { motion, useScroll, useTransform } from "framer-motion"
-import Chicken from "@/images/golem.gif"
-import Tamuel from "@/images/tamuel.gif"
-import Dog from "@/images/dog.gif"
-import EnderMan from "@/images/enderman.gif"
-import Torch from "@/images/Wall_Torch_BE.webp"
+"use client";
+import styles from "../styles/MainPage/global.module.scss";
+import React, { useEffect, useRef, useState } from "react";
+import Description from "@/components/Descr";
+import Windows from "../images/windows.png";
+import Java from "../images/Java.png";
+import Image from "next/image";
+import { motion, useScroll, useTransform } from "framer-motion";
+import Chicken from "@/images/golem.gif";
+import Tamuel from "@/images/tamuel.gif";
+import Dog from "@/images/dog.gif";
+import EnderMan from "@/images/enderman.gif";
+import Torch from "@/images/Wall_Torch_BE.webp";
 
-import Arrow from "@/images/Back.png"
-import Landing from "@/images/1.png"
-import image2 from "@/images/mainpage2.png"
-import image3 from "@/images/mainpage3.png"
-import image4 from "@/images/mainpage4.png"
-import image5 from "@/images/mainpage5.png"
+import Arrow from "@/images/Back.png";
+import Landing from "@/images/1.png";
+import image2 from "@/images/mainpage2.png";
+import image3 from "@/images/mainpage3.png";
+import image4 from "@/images/mainpage4.png";
+import image5 from "@/images/mainpage5.png";
 
 const download_launcher = (name: string) => {
-  const link = document.createElement("a")
-  link.href = `${process.env.DOMAIN_URL_IMAGES}/${name}`
-  link.download = `${name}`
-  document.body.appendChild(link)
-  link.click()
-  link.remove()
-}
+  const link = document.createElement("a");
+  link.href = `${process.env.DOMAIN_URL_IMAGES}/${name}`;
+  link.download = `${name}`;
+  document.body.appendChild(link);
+  link.click();
+  link.remove();
+};
 
 export default function Home() {
   const [windowSize, setWindowSize] = useState({
@@ -35,39 +35,39 @@ export default function Home() {
     maxScroll: 0,
     bottomDesc: 0,
     height: 0,
-  })
-  const IMAGES_URL = process.env.IMAGES_URL as string
-  const Height = useRef(0)
-  const prevScrollPos = useRef(0)
-  const { scrollY } = useScroll()
+  });
+  const IMAGES_URL = process.env.IMAGES_URL as string;
+  const Height = useRef(0);
+  const prevScrollPos = useRef(0);
+  const { scrollY } = useScroll();
   const scroll = useTransform(
     scrollY,
     [0, 2 * windowSize.height],
     [-windowSize.width, windowSize.width],
-  )
+  );
   const scrollTorch = useTransform(
     scrollY,
     [windowSize.topDesc, windowSize.bottomDesc - windowSize.height],
     [0, windowSize.bottomDesc - windowSize.topDesc - windowSize.height / 3],
-  )
+  );
 
   useEffect(() => {
-    window.scrollTo(0, -100)
+    window.scrollTo(0, -100);
     window.addEventListener("scroll", () => {
       if (prevScrollPos.current < window.scrollY) {
-        window.document.getElementsByTagName("nav")[0].style.top = "-8vh"
-        console.log("сдвиг")
+        window.document.getElementsByTagName("nav")[0].style.top = "-8vh";
+        console.log("сдвиг");
       } else {
-        window.document.getElementsByTagName("nav")[0].style.top = "10px"
+        window.document.getElementsByTagName("nav")[0].style.top = "10px";
       }
-      prevScrollPos.current = window.scrollY
-    })
-    let width, height, maxScroll
-    width = window.innerWidth
-    height = window.innerHeight
-    maxScroll = document.body.scrollHeight - window.innerHeight
-    Height.current = height
-    let topDesc = document.getElementById("description")
+      prevScrollPos.current = window.scrollY;
+    });
+    let width, height, maxScroll;
+    width = window.innerWidth;
+    height = window.innerHeight;
+    maxScroll = document.body.scrollHeight - window.innerHeight;
+    Height.current = height;
+    let topDesc = document.getElementById("description");
     //@ts-ignore
     setWindowSize({
       width: width,
@@ -75,8 +75,8 @@ export default function Home() {
       maxScroll: maxScroll,
       bottomDesc: topDesc?.getBoundingClientRect()?.bottom as number,
       height: height,
-    })
-  }, [])
+    });
+  }, []);
 
   return (
     <main className={styles.general}>
@@ -108,7 +108,7 @@ export default function Home() {
               className={styles.windows}
               target="_blank"
               onClick={() => {
-                download_launcher("Atomic-Craft.exe")
+                download_launcher("Atomic-Craft.exe");
               }}
               download
             >
@@ -130,7 +130,7 @@ export default function Home() {
               target="_blank"
               className={styles.linux}
               onClick={() => {
-                download_launcher("Atomic-Craft.jar")
+                download_launcher("Atomic-Craft.jar");
               }}
               download
             >
@@ -290,5 +290,5 @@ export default function Home() {
         </div>
       </div>
     </main>
-  )
+  );
 }

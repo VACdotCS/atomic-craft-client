@@ -1,20 +1,20 @@
-import React, { useContext, useLayoutEffect, useState } from "react"
-import ReactSkinview3d from "react-skinview3d"
-import styles from "@/styles/Profile/Settings.module.scss"
-import { Context } from "@/components/GlobalContextProvider"
-import { useRouter } from "next/navigation"
-import { WalkingAnimation } from "skinview3d"
-import { toast } from "react-toastify"
-import { observer } from "mobx-react-lite"
-import Modal from "@/components/Modal"
-import { PasswordChangeForm } from "@/components/PasswordChangeForm"
+import React, { useContext, useLayoutEffect, useState } from "react";
+import ReactSkinview3d from "react-skinview3d";
+import styles from "@/styles/Profile/Settings.module.scss";
+import { Context } from "@/components/GlobalContextProvider";
+import { useRouter } from "next/navigation";
+import { WalkingAnimation } from "skinview3d";
+import { toast } from "react-toastify";
+import { observer } from "mobx-react-lite";
+import Modal from "@/components/Modal";
+import { PasswordChangeForm } from "@/components/PasswordChangeForm";
 
 interface SettingsProps {
-  skinPath: string
-  nick: string
-  registrationDate: string
-  isActivated: boolean
-  email: string
+  skinPath: string;
+  nick: string;
+  registrationDate: string;
+  isActivated: boolean;
+  email: string;
 }
 
 const Settings: React.FC<SettingsProps> = ({
@@ -24,27 +24,27 @@ const Settings: React.FC<SettingsProps> = ({
   isActivated,
   email,
 }) => {
-  const [isDataLoaded, setIsDataLoaded] = useState<boolean>(false)
+  const [isDataLoaded, setIsDataLoaded] = useState<boolean>(false);
   const [changePasswordModalFlag, setChangePasswordModalFlag] =
-    useState<boolean>(false)
-  const [ModalAnim, setModalAnim] = useState<boolean>(false)
-  const [haveCape, setHaveCape] = useState<boolean>(false)
-  const [screenHeight, setScreenHeight] = useState<number>(0)
-  const [screenWidth, setScreenWidth] = useState<number>(0)
-  const { store } = useContext(Context)
+    useState<boolean>(false);
+  const [ModalAnim, setModalAnim] = useState<boolean>(false);
+  const [haveCape, setHaveCape] = useState<boolean>(false);
+  const [screenHeight, setScreenHeight] = useState<number>(0);
+  const [screenWidth, setScreenWidth] = useState<number>(0);
+  const { store } = useContext(Context);
 
   useLayoutEffect(() => {
     fetch(`${process.env.DOMAIN_URL_IMAGES}/user_skins/${nick}_cape.png`).then(
       (el) => {
         if (el?.ok) {
-          setHaveCape(true)
+          setHaveCape(true);
         }
       },
-    )
-    setScreenHeight(window.innerHeight)
-    setScreenWidth(window.innerWidth)
-    setIsDataLoaded(true)
-  }, [])
+    );
+    setScreenHeight(window.innerHeight);
+    setScreenWidth(window.innerWidth);
+    setIsDataLoaded(true);
+  }, []);
 
   if (!isDataLoaded) {
     return (
@@ -55,7 +55,7 @@ const Settings: React.FC<SettingsProps> = ({
       >
         Загрузка
       </div>
-    )
+    );
   }
 
   return (
@@ -79,11 +79,11 @@ const Settings: React.FC<SettingsProps> = ({
               background: "#ECECEC",
             }}
             onReady={({ viewer }) => {
-              viewer.animation = new WalkingAnimation()
-              viewer.animation.speed = 0.4
+              viewer.animation = new WalkingAnimation();
+              viewer.animation.speed = 0.4;
               // Enabled auto rotate
-              viewer.autoRotate = false
-              viewer.camera.fov = 55
+              viewer.autoRotate = false;
+              viewer.camera.fov = 55;
             }}
           />
         </div>
@@ -92,23 +92,23 @@ const Settings: React.FC<SettingsProps> = ({
             type="file"
             accept="image/*.png"
             onChange={async (event) => {
-              const files = event.target.files
+              const files = event.target.files;
               if (!files?.item(0)?.type.includes("png")) {
-                toast("Можно загрузить картинку только в формате .png")
+                toast("Можно загрузить картинку только в формате .png");
               } else {
-                const data = new FormData()
+                const data = new FormData();
                 // @ts-ignore
-                data.append("file", files.item(0), `${nick}.png`)
-                data.append("nick", nick)
+                data.append("file", files.item(0), `${nick}.png`);
+                data.append("nick", nick);
                 await store.uploadSkin(data).then((msg) => {
                   if (msg?.status === 200) {
                     toast(
                       "Скин успешно загружен и будет отображён на странице после перезагрузки",
-                    )
+                    );
                   } else {
-                    toast(msg + " Загрузите другой файл ещё раз.")
+                    toast(msg + " Загрузите другой файл ещё раз.");
                   }
-                })
+                });
               }
             }}
           />
@@ -119,23 +119,23 @@ const Settings: React.FC<SettingsProps> = ({
             type="file"
             accept="image/*.png"
             onChange={async (event) => {
-              const files = event.target.files
+              const files = event.target.files;
               if (!files?.item(0)?.type.includes("png")) {
-                toast("Можно загрузить картинку только в формате .png")
+                toast("Можно загрузить картинку только в формате .png");
               } else {
-                const data = new FormData()
+                const data = new FormData();
                 // @ts-ignore
-                data.append("file", files.item(0), `${nick}_cape.png`)
-                data.append("nick", nick)
+                data.append("file", files.item(0), `${nick}_cape.png`);
+                data.append("nick", nick);
                 await store.uploadCape(data).then((msg) => {
                   if (msg !== "OK") {
-                    toast(msg + " Загрузите другой файл ещё раз.")
+                    toast(msg + " Загрузите другой файл ещё раз.");
                   } else {
                     toast(
                       "Плащ успешно загружен и будет отображён на странице после перезагрузки",
-                    )
+                    );
                   }
-                })
+                });
               }
             }}
           />
@@ -184,8 +184,8 @@ const Settings: React.FC<SettingsProps> = ({
                 <button
                   className={styles.passwd}
                   onClick={() => {
-                    setChangePasswordModalFlag(true)
-                    setModalAnim(true)
+                    setChangePasswordModalFlag(true);
+                    setModalAnim(true);
                   }}
                 >
                   Изменить
@@ -214,18 +214,18 @@ const Settings: React.FC<SettingsProps> = ({
         <Modal
           isOpen={ModalAnim}
           handleClose={() => {
-            setModalAnim(!ModalAnim)
+            setModalAnim(!ModalAnim);
             setTimeout(
               () => setChangePasswordModalFlag(!changePasswordModalFlag),
               200,
-            )
+            );
           }}
         >
           <PasswordChangeForm />
         </Modal>
       )}
     </div>
-  )
-}
+  );
+};
 
-export default observer(Settings)
+export default observer(Settings);

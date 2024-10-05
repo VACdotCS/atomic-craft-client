@@ -1,11 +1,11 @@
-import React from "react"
-import styles from "@/styles/About/about.module.scss"
-import Teammate from "@/components/Teammate"
-import VK from "@/images/vk.png"
-import DS from "@/images/discord.png"
-import TG from "@/images/TG.png"
-import Image from "next/image"
-import Link from "next/link"
+import React from "react";
+import styles from "@/styles/About/about.module.scss";
+import Teammate from "@/components/Teammate";
+import VK from "@/images/vk.png";
+import DS from "@/images/discord.png";
+import TG from "@/images/TG.png";
+import Image from "next/image";
+import Link from "next/link";
 
 const team = [
   {
@@ -33,7 +33,7 @@ const team = [
     Должность: "Помощник строителя",
     Любит: "Люблю музыку, кушать, спать, мод Mekanism и немного спорт",
   },
-]
+];
 
 const About = () => {
   return (
@@ -133,7 +133,7 @@ const About = () => {
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default About
+export default About;

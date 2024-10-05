@@ -1,20 +1,20 @@
-"use client"
-import * as React from "react"
-import { Form, Formik, Field } from "formik"
-import * as Yup from "yup"
-import { Context } from "@/components/GlobalContextProvider"
-import { useContext, useState } from "react"
-import { observer } from "mobx-react-lite"
-import styles from "@/styles/Nav/Reg.module.scss"
-import { AnimatePresence, motion } from "framer-motion"
-import { useRouter } from "next/navigation"
-import { toast } from "react-toastify"
-import { action, values } from "mobx"
+"use client";
+import * as React from "react";
+import { Form, Formik, Field } from "formik";
+import * as Yup from "yup";
+import { Context } from "@/components/GlobalContextProvider";
+import { useContext, useState } from "react";
+import { observer } from "mobx-react-lite";
+import styles from "@/styles/Nav/Reg.module.scss";
+import { AnimatePresence, motion } from "framer-motion";
+import { useRouter } from "next/navigation";
+import { toast } from "react-toastify";
+import { action, values } from "mobx";
 
 interface MyFormValues {
-  prev_password: string
-  passwd: string
-  verify: string
+  prev_password: string;
+  passwd: string;
+  verify: string;
 }
 
 const SignInScheme = Yup.object().shape({
@@ -26,44 +26,44 @@ const SignInScheme = Yup.object().shape({
     [Yup.ref("passwd"), undefined],
     "Пароли должны совпадать",
   ),
-})
+});
 
 export const PasswordChangeForm: React.FC<{}> = () => {
-  const { store } = useContext(Context)
-  const [loader, setLoader] = useState<boolean>(false)
+  const { store } = useContext(Context);
+  const [loader, setLoader] = useState<boolean>(false);
 
   const initialValues: MyFormValues = {
     prev_password: "",
     passwd: "",
     verify: "",
-  }
+  };
 
   return (
     <div>
       <Formik
         initialValues={initialValues}
         onSubmit={async (values, actions) => {
-          setLoader(true)
+          setLoader(true);
           if (values.prev_password === values.passwd) {
-            actions.setFieldError("passwd", "Пароль совпадает с предыдущим")
+            actions.setFieldError("passwd", "Пароль совпадает с предыдущим");
           } else {
             const res = await store.changePasswordAuthed(
               store.user.nick,
               values.prev_password,
               values.passwd,
-            )
+            );
             if (res?.status === 200) {
               toast(
                 "Пароль успешно изменён, вы бедете перенаправлены на главную страницу. Пожалуйста, войдите ещё раз",
-              )
+              );
               setTimeout(async () => {
                 await store.logout().then(() => {
-                  setLoader(false)
-                  location.replace("/")
-                })
-              }, 4200)
+                  setLoader(false);
+                  location.replace("/");
+                });
+              }, 4200);
             } else {
-              actions.setFieldError("prev_password", res)
+              actions.setFieldError("prev_password", res);
             }
           }
         }}
@@ -144,7 +144,7 @@ export const PasswordChangeForm: React.FC<{}> = () => {
         )}
       </Formik>
     </div>
-  )
-}
+  );
+};
 
-export default observer(PasswordChangeForm)
+export default observer(PasswordChangeForm);

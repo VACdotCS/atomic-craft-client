@@ -1,14 +1,14 @@
-"use client"
+"use client";
 
-import React, { useEffect } from "react"
-import ReactPortal from "./ReactPortal"
-import { AnimatePresence, motion } from "framer-motion"
-import styles from "@/styles/Modal/Register.module.scss"
-import { ToastContainer } from "react-toastify"
+import React, { useEffect } from "react";
+import ReactPortal from "./ReactPortal";
+import { AnimatePresence, motion } from "framer-motion";
+import styles from "@/styles/Modal/Register.module.scss";
+import { ToastContainer } from "react-toastify";
 interface ConfirmationModalProps {
-  children: React.ReactNode
-  isOpen: boolean
-  handleClose: () => void
+  children: React.ReactNode;
+  isOpen: boolean;
+  handleClose: () => void;
 }
 
 const Modal = ({ children, isOpen, handleClose }: ConfirmationModalProps) => {
@@ -49,7 +49,7 @@ const Modal = ({ children, isOpen, handleClose }: ConfirmationModalProps) => {
         </AnimatePresence>
       </>
     </ReactPortal>
-  )
-}
+  );
+};
 
-export default Modal
+export default Modal;

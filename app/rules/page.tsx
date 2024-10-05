@@ -1,12 +1,12 @@
-"use client"
-import React from "react"
-import styles from "@/styles/Rules/Rules.module.scss"
-import Image from "next/image"
-import Img from "@/images/enderman.gif"
-import { motion, useScroll } from "framer-motion"
+"use client";
+import React from "react";
+import styles from "@/styles/Rules/Rules.module.scss";
+import Image from "next/image";
+import Img from "@/images/enderman.gif";
+import { motion, useScroll } from "framer-motion";
 
 const Rules = () => {
-  const { scrollY } = useScroll()
+  const { scrollY } = useScroll();
   return (
     <section>
       <div className={styles.mainWrapper}>
@@ -1025,7 +1025,7 @@ const Rules = () => {
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default Rules
+export default Rules;

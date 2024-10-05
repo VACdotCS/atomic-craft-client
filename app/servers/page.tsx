@@ -1,36 +1,36 @@
-"use client"
-import React, { useContext, useEffect, useState } from "react"
-import styles from "@/styles/Habs/Page.module.scss"
-import { Item } from "@/app/servers/Item"
-import ServerCard from "@/components/ServerCard"
-import ServerModal from "@/components/ServerModal"
-import { LayoutGroup, AnimatePresence, motion } from "framer-motion"
-import { Context } from "@/components/GlobalContextProvider"
-import { ServerInfo } from "@/app/servers/types"
+"use client";
+import React, { useContext, useEffect, useState } from "react";
+import styles from "@/styles/Habs/Page.module.scss";
+import { Item } from "@/app/servers/Item";
+import ServerCard from "@/components/ServerCard";
+import ServerModal from "@/components/ServerModal";
+import { LayoutGroup, AnimatePresence, motion } from "framer-motion";
+import { Context } from "@/components/GlobalContextProvider";
+import { ServerInfo } from "@/app/servers/types";
 
 const Servers = () => {
-  const [sumOnline, setSumOnline] = useState<number>(0)
-  const [Servers, setServers] = useState<Array<ServerInfo>>([])
-  const [CachedServers, setCachedServers] = useState<Array<ServerInfo>>([])
-  const [Versions, setVersions] = useState<Array<string>>([])
-  const [mods, setMods] = useState<Array<string>>([])
-  const [choosedMods, setChoosedMods] = useState<Array<string>>([])
-  const [choosedVersion, setChoosedVersion] = useState<string>("")
-  const [isFetched, setIsFetched] = useState<boolean>(false)
-  const [ServerFlagAnim, setServerFlagAnim] = useState<boolean>(false)
-  const [ServerFlag, setServerFlag] = useState<boolean>(false)
-  const [Id, setId] = useState<string>("")
-  const { store } = useContext(Context)
+  const [sumOnline, setSumOnline] = useState<number>(0);
+  const [Servers, setServers] = useState<Array<ServerInfo>>([]);
+  const [CachedServers, setCachedServers] = useState<Array<ServerInfo>>([]);
+  const [Versions, setVersions] = useState<Array<string>>([]);
+  const [mods, setMods] = useState<Array<string>>([]);
+  const [choosedMods, setChoosedMods] = useState<Array<string>>([]);
+  const [choosedVersion, setChoosedVersion] = useState<string>("");
+  const [isFetched, setIsFetched] = useState<boolean>(false);
+  const [ServerFlagAnim, setServerFlagAnim] = useState<boolean>(false);
+  const [ServerFlag, setServerFlag] = useState<boolean>(false);
+  const [Id, setId] = useState<string>("");
+  const { store } = useContext(Context);
 
   function clearList() {
-    let listUL = window.document.getElementById("list")
+    let listUL = window.document.getElementById("list");
     if (listUL) {
-      let liS = listUL.getElementsByTagName("li")
+      let liS = listUL.getElementsByTagName("li");
       for (let i = 0; i < liS.length; ++i) {
-        let item = liS.item(i)
+        let item = liS.item(i);
         if (item) {
           if (String(item.style.opacity) === "0") {
-            item.style.display = "none"
+            item.style.display = "none";
           }
         }
       }
@@ -39,104 +39,104 @@ const Servers = () => {
 
   function addChoosedMod(elem: string) {
     if (elem !== "") {
-      choosedMods.push(elem)
-      let newArray: Array<string> = []
+      choosedMods.push(elem);
+      let newArray: Array<string> = [];
       mods.map((el) => {
         if (elem !== el) {
-          newArray.push(el)
+          newArray.push(el);
         }
-      })
-      setMods(newArray)
+      });
+      setMods(newArray);
     }
   }
 
   function deleteChoosedMod(elem: string) {
-    let newArray: Array<string> = []
+    let newArray: Array<string> = [];
     choosedMods.map((el) => {
       if (elem !== el) {
-        newArray.push(el)
+        newArray.push(el);
       }
-    })
-    setChoosedMods(newArray)
-    mods.push(elem)
+    });
+    setChoosedMods(newArray);
+    mods.push(elem);
   }
 
   const fetchServersData = async () => {
     store.getServerInfo().then((el) => {
-      const data: Array<ServerInfo> = []
-      store.setLoading(true)
+      const data: Array<ServerInfo> = [];
+      store.setLoading(true);
       el["Servers"].map((item: any) => {
-        data.push(item)
-      })
-      let sum = 0
-      let setOfVersions = new Set<string>()
-      let setOfMods = new Set<string>()
+        data.push(item);
+      });
+      let sum = 0;
+      let setOfVersions = new Set<string>();
+      let setOfMods = new Set<string>();
       data.map((el) => {
-        setOfVersions.add(el.version)
+        setOfVersions.add(el.version);
         if (el.online !== -1) {
-          sum += el.online
+          sum += el.online;
         }
         el.mods.map((mod) => {
-          setOfMods.add(mod)
-        })
-      })
-      setVersions(Array.from(setOfVersions))
-      setMods(Array.from(setOfMods))
-      setServers(data)
-      setCachedServers(data)
-      setSumOnline(sum)
+          setOfMods.add(mod);
+        });
+      });
+      setVersions(Array.from(setOfVersions));
+      setMods(Array.from(setOfMods));
+      setServers(data);
+      setCachedServers(data);
+      setSumOnline(sum);
 
-      store.setLoading(false)
-      setIsFetched(true)
-    })
-  }
+      store.setLoading(false);
+      setIsFetched(true);
+    });
+  };
 
   function updateServers() {
-    let newArr: Array<ServerInfo> = []
+    let newArr: Array<ServerInfo> = [];
     CachedServers.map((el) => {
-      let flag = true
-      if (choosedVersion !== "" && choosedVersion !== el.version) flag = false
+      let flag = true;
+      if (choosedVersion !== "" && choosedVersion !== el.version) flag = false;
       if (choosedMods.length != 0) {
         choosedMods.map((mod) => {
           if (!el.mods.includes(mod)) {
-            flag = false
+            flag = false;
           }
-        })
+        });
       }
       if (flag) {
-        newArr.push(el)
+        newArr.push(el);
       }
-    })
+    });
     if (CachedServers.length !== newArr.length) {
-      setServers(newArr)
+      setServers(newArr);
       setTimeout(() => {
-        clearList()
-      }, 400)
+        clearList();
+      }, 400);
     } else {
-      setServers(CachedServers)
+      setServers(CachedServers);
     }
   }
 
   function resetFilter() {
-    let divWithMods = window.document.getElementById("listChoosedMods")
-    let buttons = divWithMods?.getElementsByTagName("button")
+    let divWithMods = window.document.getElementById("listChoosedMods");
+    let buttons = divWithMods?.getElementsByTagName("button");
 
     if (buttons) {
       for (let i = 0; i < buttons.length; ++i) {
-        buttons?.item(i)?.click()
+        buttons?.item(i)?.click();
       }
     }
 
-    setChoosedMods([])
-    setChoosedVersion("")
+    setChoosedMods([]);
+    setChoosedVersion("");
   }
 
   useEffect(() => {
     if (!isFetched) {
-      fetchServersData()
+      fetchServersData();
     }
-    updateServers()
-  }, [choosedMods, mods, choosedVersion])
+    updateServers();
+  }, [choosedMods, mods, choosedVersion]);
 
   return (
     <LayoutGroup>
@@ -165,9 +165,9 @@ const Servers = () => {
                   version={elem.version}
                   isOnline={elem.isOnline}
                   onClick={() => {
-                    setServerFlag(!ServerFlag)
-                    setServerFlagAnim(true)
-                    setId(elem.id)
+                    setServerFlag(!ServerFlag);
+                    setServerFlagAnim(true);
+                    setId(elem.id);
                   }}
                 />
               ))}
@@ -177,8 +177,8 @@ const Servers = () => {
                 <ServerModal
                   isOpen={ServerFlagAnim}
                   handleClose={() => {
-                    setServerFlagAnim(!ServerFlagAnim)
-                    setTimeout(() => setServerFlag(!ServerFlag), 200)
+                    setServerFlagAnim(!ServerFlagAnim);
+                    setTimeout(() => setServerFlag(!ServerFlag), 200);
                   }}
                 >
                   <Item id={Id} data={Servers} />
@@ -194,8 +194,8 @@ const Servers = () => {
             title={"Версия"}
             className={styles.version}
             onChange={(event) => {
-              event.preventDefault()
-              setChoosedVersion(event.target.value)
+              event.preventDefault();
+              setChoosedVersion(event.target.value);
             }}
           >
             {Versions.map((elem) => (
@@ -209,7 +209,7 @@ const Servers = () => {
             content={""}
             className={styles.version}
             onChange={(event) => {
-              addChoosedMod(event.target.value)
+              addChoosedMod(event.target.value);
             }}
           >
             {mods.map((elem) => (
@@ -272,7 +272,7 @@ const Servers = () => {
                         <button
                           id={"modErase"}
                           onClick={() => {
-                            deleteChoosedMod(elem)
+                            deleteChoosedMod(elem);
                           }}
                           className={styles.button}
                         >
@@ -311,7 +311,7 @@ const Servers = () => {
         </div>
       </main>
     </LayoutGroup>
-  )
-}
+  );
+};
 
-export default Servers
+export default Servers;

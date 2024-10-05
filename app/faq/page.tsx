@@ -1,6 +1,6 @@
-"use client"
-import React from "react"
-import styles from "@/styles/FAQ/main.module.scss"
+"use client";
+import React from "react";
+import styles from "@/styles/FAQ/main.module.scss";
 
 const Rules = () => {
   return (
@@ -107,7 +107,7 @@ const Rules = () => {
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default Rules
+export default Rules;

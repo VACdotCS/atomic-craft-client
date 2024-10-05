@@ -1,10 +1,10 @@
-import axios, { AxiosResponse } from "axios"
-import api from "../index"
-import { IUser } from "@/app/api/[models]/User"
+import axios, { AxiosResponse } from "axios";
+import api from "../index";
+import { IUser } from "@/app/api/[models]/User";
 
 interface UmoneyResponse {
-  error: string
-  status_code: number
+  error: string;
+  status_code: number;
 }
 
 export default class UMoneyAuthService {
@@ -16,6 +16,6 @@ export default class UMoneyAuthService {
     return api.post("/umoney/requestPayment", {
       user: user,
       sum: sum,
-    })
+    });
   }
 }

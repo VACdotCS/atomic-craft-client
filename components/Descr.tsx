@@ -1,14 +1,14 @@
-"use client"
-import React from "react"
-import { motion } from "framer-motion"
-import styles from "../styles/MainPage/Descr.module.scss"
-import Image, { StaticImageData } from "next/image"
-import Landing from "../images/1.png"
+"use client";
+import React from "react";
+import { motion } from "framer-motion";
+import styles from "../styles/MainPage/Descr.module.scss";
+import Image, { StaticImageData } from "next/image";
+import Landing from "../images/1.png";
 
 interface DescriptionProps {
-  title: string
-  description: string
-  src: StaticImageData
+  title: string;
+  description: string;
+  src: StaticImageData;
 }
 
 const block_animation_left = {
@@ -20,7 +20,7 @@ const block_animation_left = {
     scale: 1,
     opacity: 1,
   },
-}
+};
 
 const block_animation_right = {
   hidden: {
@@ -31,7 +31,7 @@ const block_animation_right = {
     scale: 1,
     opacity: 1,
   },
-}
+};
 
 const Description: React.FC<DescriptionProps> = ({
   title = "Atomic Craft",
@@ -55,7 +55,7 @@ const Description: React.FC<DescriptionProps> = ({
         <p>{description}</p>
       </div>
     </motion.div>
-  )
-}
+  );
+};
 
-export default Description
+export default Description;

@@ -1,19 +1,19 @@
-"use client"
-import React, { useState, useEffect } from "react"
-import styles from "@/styles/Donate/donate.module.scss"
-import ReactCardFlip from "react-card-flip"
-import { observer } from "mobx-react-lite"
+"use client";
+import React, { useState, useEffect } from "react";
+import styles from "@/styles/Donate/donate.module.scss";
+import ReactCardFlip from "react-card-flip";
+import { observer } from "mobx-react-lite";
 
 const Donate = () => {
-  const [legendVisible, setLegendVisible] = useState<boolean>(false)
-  const [deluxeVisible, setDeluxeVisible] = useState<boolean>(false)
-  const [premiumVisible, setPremiumVisible] = useState<boolean>(false)
-  const [GodVisible, setGodVisible] = useState<boolean>(false)
-  const [serversNames, setServersNames] = useState<Array<String>>([])
+  const [legendVisible, setLegendVisible] = useState<boolean>(false);
+  const [deluxeVisible, setDeluxeVisible] = useState<boolean>(false);
+  const [premiumVisible, setPremiumVisible] = useState<boolean>(false);
+  const [GodVisible, setGodVisible] = useState<boolean>(false);
+  const [serversNames, setServersNames] = useState<Array<String>>([]);
 
   function fetch_servers_names() {}
 
-  useEffect(() => {}, [])
+  useEffect(() => {}, []);
 
   return (
     <section className={styles.main}>
@@ -24,7 +24,7 @@ const Donate = () => {
             <button
               className={styles.learnMore}
               onClick={() => {
-                setLegendVisible(true)
+                setLegendVisible(true);
               }}
             >
               Приобрести
@@ -34,7 +34,7 @@ const Donate = () => {
           <div
             className={styles.cardBack}
             onClick={() => {
-              setLegendVisible(false)
+              setLegendVisible(false);
             }}
           >
             Здесь форма для работы с бэкендом, выбором сервера для присвоения
@@ -47,7 +47,7 @@ const Donate = () => {
             <button
               className={styles.learnMore}
               onClick={() => {
-                setDeluxeVisible(true)
+                setDeluxeVisible(true);
               }}
             >
               Приобрести
@@ -57,7 +57,7 @@ const Donate = () => {
           <div
             className={styles.cardBack}
             onClick={() => {
-              setDeluxeVisible(false)
+              setDeluxeVisible(false);
             }}
           >
             Здесь форма для работы с бэкендом, выбором сервера для присвоения
@@ -70,7 +70,7 @@ const Donate = () => {
             <button
               className={styles.learnMore}
               onClick={() => {
-                setPremiumVisible(true)
+                setPremiumVisible(true);
               }}
             >
               Приобрести
@@ -80,7 +80,7 @@ const Donate = () => {
           <div
             className={styles.cardBack}
             onClick={() => {
-              setPremiumVisible(false)
+              setPremiumVisible(false);
             }}
           >
             Здесь форма для работы с бэкендом, выбором сервера для присвоения
@@ -93,7 +93,7 @@ const Donate = () => {
             <button
               className={styles.learnMore}
               onClick={() => {
-                setGodVisible(true)
+                setGodVisible(true);
               }}
             >
               Приобрести
@@ -103,7 +103,7 @@ const Donate = () => {
           <div
             className={styles.cardBack}
             onClick={() => {
-              setGodVisible(false)
+              setGodVisible(false);
             }}
           >
             Здесь форма для работы с бэкендом, выбором сервера для присвоения
@@ -112,7 +112,7 @@ const Donate = () => {
         </ReactCardFlip>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default observer(Donate)
+export default observer(Donate);

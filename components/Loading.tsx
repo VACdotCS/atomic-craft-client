@@ -1,17 +1,17 @@
-"use client"
-import { AnimatePresence, motion } from "framer-motion"
-import styles from "@/styles/Nav/Links.module.scss"
-import React, { useState } from "react"
+"use client";
+import { AnimatePresence, motion } from "framer-motion";
+import styles from "@/styles/Nav/Links.module.scss";
+import React, { useState } from "react";
 
 type Props = {
-  isVisible: boolean
-}
+  isVisible: boolean;
+};
 
 const Loading: React.FC<Props> = ({ isVisible }) => {
-  const [completed, setCompleted] = useState<boolean>(false)
+  const [completed, setCompleted] = useState<boolean>(false);
   const changeVisible = () => {
-    setCompleted(true)
-  }
+    setCompleted(true);
+  };
   return (
     <AnimatePresence initial={true}>
       {isVisible && (
@@ -24,7 +24,7 @@ const Loading: React.FC<Props> = ({ isVisible }) => {
           }}
           exit={{ display: "none" }}
           onAnimationComplete={() => {
-            changeVisible()
+            changeVisible();
           }}
           transition={{ delay: 0.5 }}
         >
@@ -32,7 +32,7 @@ const Loading: React.FC<Props> = ({ isVisible }) => {
         </motion.div>
       )}
     </AnimatePresence>
-  )
-}
+  );
+};
 
-export default Loading
+export default Loading;

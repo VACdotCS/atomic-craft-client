@@ -1,15 +1,15 @@
-"use client"
-import React from "react"
-import { motion } from "framer-motion"
-import styles from "@/styles/Habs/Page.module.scss"
-import Image from "next/image"
+"use client";
+import React from "react";
+import { motion } from "framer-motion";
+import styles from "@/styles/Habs/Page.module.scss";
+import Image from "next/image";
 
 interface CardProps {
-  id: string
-  version: string
-  title: string
-  isOnline: boolean
-  onClick: () => void
+  id: string;
+  version: string;
+  title: string;
+  isOnline: boolean;
+  onClick: () => void;
 }
 
 const ServerCard: React.FC<CardProps> = ({
@@ -19,7 +19,7 @@ const ServerCard: React.FC<CardProps> = ({
   isOnline,
   onClick,
 }) => {
-  const imagePath = title.split(" ").join("_")
+  const imagePath = title.split(" ").join("_");
   return (
     <motion.li
       layoutId={id}
@@ -86,7 +86,7 @@ const ServerCard: React.FC<CardProps> = ({
         </motion.div>
       </motion.div>
     </motion.li>
-  )
-}
+  );
+};
 
-export default ServerCard
+export default ServerCard;

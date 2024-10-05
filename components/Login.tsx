@@ -1,26 +1,26 @@
-"use client"
-import * as React from "react"
-import { Form, Formik, Field } from "formik"
-import * as Yup from "yup"
-import { Context } from "@/components/GlobalContextProvider"
-import { useContext, useEffect, useState } from "react"
-import { observer } from "mobx-react-lite"
-import styles from "@/styles/Nav/Reg.module.scss"
-import { AnimatePresence, LayoutGroup, motion } from "framer-motion"
-import Image from "next/image"
-import { toast } from "react-toastify"
-import { bool } from "yup"
+"use client";
+import * as React from "react";
+import { Form, Formik, Field } from "formik";
+import * as Yup from "yup";
+import { Context } from "@/components/GlobalContextProvider";
+import { useContext, useEffect, useState } from "react";
+import { observer } from "mobx-react-lite";
+import styles from "@/styles/Nav/Reg.module.scss";
+import { AnimatePresence, LayoutGroup, motion } from "framer-motion";
+import Image from "next/image";
+import { toast } from "react-toastify";
+import { bool } from "yup";
 
 interface MyFormValues {
-  nickname: string
-  passwd: string
+  nickname: string;
+  passwd: string;
 }
 
 interface MyFormValuesForget {
-  email: string
-  password: string
-  verify: string
-  hash: ""
+  email: string;
+  password: string;
+  verify: string;
+  hash: "";
 }
 
 const SignInScheme = Yup.object().shape({
@@ -28,13 +28,13 @@ const SignInScheme = Yup.object().shape({
     .max(16, "Ник не может быть длиной больше 16 символов")
     .required("Ник не может быть пустым"),
   passwd: Yup.string().required("Не забудьте пароль"),
-})
+});
 
 const changePasswordScheme1 = Yup.object().shape({
   email: Yup.string()
     .required("Введите email")
     .email("Введите корректный email"),
-})
+});
 
 const changePasswordScheme2 = Yup.object().shape({
   email: Yup.string()
@@ -49,52 +49,52 @@ const changePasswordScheme2 = Yup.object().shape({
     "Пароли должны совпадать",
   ),
   hash: Yup.string().required("Введите код с почты"),
-})
+});
 
 export const Login: React.FC<{}> = () => {
-  const { store } = useContext(Context)
-  const [loginPage, setLoginPage] = useState<boolean>(true)
-  const [rememberPage, setRememberPage] = useState<boolean>(false)
-  const [emailSent, setEmailSent] = useState<boolean>(false)
-  const [loader, setLoader] = useState<boolean>(false)
-  const [submitted, setSubmitted] = useState<boolean>(false)
-  const [screenWidth, setScreenWidth] = useState<number>(0)
+  const { store } = useContext(Context);
+  const [loginPage, setLoginPage] = useState<boolean>(true);
+  const [rememberPage, setRememberPage] = useState<boolean>(false);
+  const [emailSent, setEmailSent] = useState<boolean>(false);
+  const [loader, setLoader] = useState<boolean>(false);
+  const [submitted, setSubmitted] = useState<boolean>(false);
+  const [screenWidth, setScreenWidth] = useState<number>(0);
 
   const handleClickForget = () => {
-    setLoginPage(false)
+    setLoginPage(false);
     setTimeout(() => {
-      setRememberPage(true)
-    }, 500)
-  }
+      setRememberPage(true);
+    }, 500);
+  };
 
   const handleClickBack = () => {
-    setRememberPage(false)
+    setRememberPage(false);
     setTimeout(() => {
       // @ts-ignore
-      window.document.getElementById("backbtn").style.display = "none"
-    }, 125)
+      window.document.getElementById("backbtn").style.display = "none";
+    }, 125);
     setTimeout(() => {
-      setLoginPage(true)
-    }, 500)
-    setEmailSent(false)
-    setSubmitted(false)
-  }
+      setLoginPage(true);
+    }, 500);
+    setEmailSent(false);
+    setSubmitted(false);
+  };
 
   const initialValues: MyFormValues = {
     nickname: "",
     passwd: "",
-  }
+  };
 
   const initialValuesForget: MyFormValuesForget = {
     email: "",
     password: "",
     verify: "",
     hash: "",
-  }
+  };
 
   useEffect(() => {
-    setScreenWidth(window.innerWidth)
-  }, [])
+    setScreenWidth(window.innerWidth);
+  }, []);
 
   return (
     <section
@@ -128,14 +128,14 @@ export const Login: React.FC<{}> = () => {
               <Formik
                 initialValues={initialValues}
                 onSubmit={async (values, actions) => {
-                  setLoader(true)
-                  const res = await store.login(values.nickname, values.passwd)
+                  setLoader(true);
+                  const res = await store.login(values.nickname, values.passwd);
                   if (res) {
-                    actions.setFieldError("passwd", res?.data?.message)
+                    actions.setFieldError("passwd", res?.data?.message);
                   } else {
-                    location.reload()
+                    location.reload();
                   }
-                  setLoader(false)
+                  setLoader(false);
                 }}
                 validationSchema={SignInScheme}
               >
@@ -188,7 +188,7 @@ export const Login: React.FC<{}> = () => {
                     <button
                       type="submit"
                       onClick={() => {
-                        setLoader(true)
+                        setLoader(true);
                       }}
                       className={styles.submit_login}
                     >
@@ -246,17 +246,17 @@ export const Login: React.FC<{}> = () => {
               <Formik
                 initialValues={initialValuesForget}
                 onSubmit={async (values, actions) => {
-                  setLoader(true)
+                  setLoader(true);
                   if (!emailSent) {
                     await store
                       .sendChangePasswordEmail(values.email)
                       .then((res) => {
                         if (res?.status === 200) {
-                          setEmailSent(true)
+                          setEmailSent(true);
                         } else {
-                          actions.setFieldError("email", res)
+                          actions.setFieldError("email", res);
                         }
-                      })
+                      });
                   } else {
                     await store
                       .changeEmailWithHash(
@@ -266,17 +266,17 @@ export const Login: React.FC<{}> = () => {
                       )
                       .then((res) => {
                         if (res?.status === 200) {
-                          setEmailSent(false)
-                          setSubmitted(true)
+                          setEmailSent(false);
+                          setSubmitted(true);
                           setTimeout(() => {
-                            location.replace("/")
-                          }, 3000)
+                            location.replace("/");
+                          }, 3000);
                         } else {
-                          actions.setFieldError("hash", res)
+                          actions.setFieldError("hash", res);
                         }
-                      })
+                      });
                   }
-                  setLoader(false)
+                  setLoader(false);
                 }}
                 validationSchema={
                   emailSent ? changePasswordScheme2 : changePasswordScheme1
@@ -456,7 +456,7 @@ export const Login: React.FC<{}> = () => {
         </AnimatePresence>
       </LayoutGroup>
     </section>
-  )
-}
+  );
+};
 
-export default observer(Login)
+export default observer(Login);

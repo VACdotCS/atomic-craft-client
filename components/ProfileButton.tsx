@@ -1,10 +1,10 @@
-import { motion } from "framer-motion"
-import React from "react"
+import { motion } from "framer-motion";
+import React from "react";
 
 interface ButtonProps {
-  title: string
-  isSelected: boolean
-  onClick: React.MouseEventHandler
+  title: string;
+  isSelected: boolean;
+  onClick: React.MouseEventHandler;
 }
 
 const Button: React.FC<ButtonProps> = ({ title, isSelected, onClick }) => {
@@ -51,11 +51,11 @@ const Button: React.FC<ButtonProps> = ({ title, isSelected, onClick }) => {
         {title}
       </motion.span>
     </motion.div>
-  )
-}
+  );
+};
 
 interface BgSelector {
-  title: string
+  title: string;
 }
 
 const BgSelector: React.FC<BgSelector> = ({ title }) => {
@@ -85,7 +85,7 @@ const BgSelector: React.FC<BgSelector> = ({ title }) => {
             }
       }
     />
-  )
-}
+  );
+};
 
-export default Button
+export default Button;

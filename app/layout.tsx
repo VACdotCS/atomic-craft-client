@@ -1,10 +1,10 @@
-import "../styles/globals.scss"
-import styles from "../styles/globals.module.scss"
-import type { Metadata } from "next"
-import Nav from "@/components/Nav"
-import GlobalContextProvider from "@/components/GlobalContextProvider"
-import { ToastContainer } from "react-toastify"
-import React from "react"
+import "../styles/globals.scss";
+import styles from "../styles/globals.module.scss";
+import type { Metadata } from "next";
+import Nav from "@/components/Nav";
+import GlobalContextProvider from "@/components/GlobalContextProvider";
+import { ToastContainer } from "react-toastify";
+import React from "react";
 
 export const metadata: Metadata = {
   title: "Atomic Craft - Ваш проект серверов",
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     height: "device-height",
   },
   creator: "InkyCrane",
-}
+};
 
 function RootLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -44,6 +44,6 @@ function RootLayout({ children }: { children: React.ReactNode }) {
         </GlobalContextProvider>
       </body>
     </html>
-  )
+  );
 }
-export default RootLayout
+export default RootLayout;

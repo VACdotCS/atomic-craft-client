@@ -1,13 +1,13 @@
-import api from "../index"
-import { AxiosResponse } from "axios"
-import { AuthResponse } from "@/app/api/[models]/AuthResponse"
+import api from "../index";
+import { AxiosResponse } from "axios";
+import { AuthResponse } from "@/app/api/[models]/AuthResponse";
 
 export default class AuthService {
   static async login(
     nickname: string,
     password: string,
   ): Promise<AxiosResponse<AuthResponse>> {
-    return api.post<AuthResponse>("/login", { nickname, password })
+    return api.post<AuthResponse>("/login", { nickname, password });
   }
 
   static async registration(
@@ -19,15 +19,15 @@ export default class AuthService {
       nickname,
       password,
       email,
-    })
+    });
   }
 
   static async logout(): Promise<void> {
-    return api.post("/logout")
+    return api.post("/logout");
   }
 
   static async sendChangePasswordEmail(email: string): Promise<AxiosResponse> {
-    return api.post("/change/sendEmail", { email })
+    return api.post("/change/sendEmail", { email });
   }
 
   static async changePasswordWithHash(
@@ -39,7 +39,7 @@ export default class AuthService {
       email,
       hashedString,
       newPassword,
-    })
+    });
   }
 
   static async changePassword(
@@ -51,6 +51,6 @@ export default class AuthService {
       nickname,
       previousPassword,
       newPassword,
-    })
+    });
   }
 }

@@ -1,26 +1,26 @@
-"use client"
-import React, { useState, useContext } from "react"
-import Image from "next/image"
-import styles from "@/styles/Nav/UserProfileDropDown.module.scss"
-import { Context } from "@/components/GlobalContextProvider"
-import { AnimatePresence, motion } from "framer-motion"
-import ShowPng from "@/images/show.png"
-import Coin from "@/images/Atom-Coin.png"
+"use client";
+import React, { useState, useContext } from "react";
+import Image from "next/image";
+import styles from "@/styles/Nav/UserProfileDropDown.module.scss";
+import { Context } from "@/components/GlobalContextProvider";
+import { AnimatePresence, motion } from "framer-motion";
+import ShowPng from "@/images/show.png";
+import Coin from "@/images/Atom-Coin.png";
 
 const UserProfileSelector: React.FC = () => {
-  const { store } = useContext(Context)
-  const [isVisible, setIsVisible] = useState<boolean>(false)
+  const { store } = useContext(Context);
+  const [isVisible, setIsVisible] = useState<boolean>(false);
 
   const handleClick = () => {
-    setIsVisible(!isVisible)
-  }
+    setIsVisible(!isVisible);
+  };
 
   const LogoutAndRefresh = () => {
-    store.setLoading(true)
+    store.setLoading(true);
     store.logout().then((_) => {
-      location.replace("/")
-    })
-  }
+      location.replace("/");
+    });
+  };
 
   return (
     <section className={styles.profile}>
@@ -95,7 +95,7 @@ const UserProfileSelector: React.FC = () => {
         )}
       </AnimatePresence>
     </section>
-  )
-}
+  );
+};
 
-export default UserProfileSelector
+export default UserProfileSelector;

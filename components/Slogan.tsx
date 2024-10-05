@@ -1,7 +1,7 @@
-"use client"
-import React from "react"
-import { motion } from "framer-motion"
-import styles from "../styles/MainPage/slogans.module.scss"
+"use client";
+import React from "react";
+import { motion } from "framer-motion";
+import styles from "../styles/MainPage/slogans.module.scss";
 
 const textAnimation = {
   hidden: {
@@ -12,7 +12,7 @@ const textAnimation = {
     x: 0,
     opacity: 1,
   },
-}
+};
 
 const Slogan = (props: { title?: string }) => {
   return (
@@ -27,7 +27,7 @@ const Slogan = (props: { title?: string }) => {
         </motion.h1>
       </div>
     </motion.section>
-  )
-}
+  );
+};
 
-export default Slogan
+export default Slogan;

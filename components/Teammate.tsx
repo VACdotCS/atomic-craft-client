@@ -1,11 +1,11 @@
-import React from "react"
-import Image from "next/image"
-import styles from "@/styles/About/teammate.module.scss"
+import React from "react";
+import Image from "next/image";
+import styles from "@/styles/About/teammate.module.scss";
 
 interface props {
-  love: string
-  position: string
-  nickname: string
+  love: string;
+  position: string;
+  nickname: string;
 }
 
 const TeamMate: React.FC<props> = ({ nickname, position, love }) => {
@@ -23,7 +23,7 @@ const TeamMate: React.FC<props> = ({ nickname, position, love }) => {
       <span className={styles.position}>{position}</span>
       <p className={styles.love}>{love}</p>
     </section>
-  )
-}
+  );
+};
 
-export default TeamMate
+export default TeamMate;

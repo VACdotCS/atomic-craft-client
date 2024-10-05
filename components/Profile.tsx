@@ -1,18 +1,18 @@
-"use client"
-import React, { useState } from "react"
-import styles from "@/styles/profile.module.scss"
-import { motion, LayoutGroup, AnimatePresence } from "framer-motion"
-import { observer } from "mobx-react-lite"
-import Settings from "@/components/Settings"
-import Button from "@/components/ProfileButton"
-import PlugComingSoon from "@/components/PlugComingSoon"
+"use client";
+import React, { useState } from "react";
+import styles from "@/styles/profile.module.scss";
+import { motion, LayoutGroup, AnimatePresence } from "framer-motion";
+import { observer } from "mobx-react-lite";
+import Settings from "@/components/Settings";
+import Button from "@/components/ProfileButton";
+import PlugComingSoon from "@/components/PlugComingSoon";
 
 interface ProfileProps {
-  skinPath: string
-  nick: string
-  registrationDate: string
-  isActivated: boolean
-  email: string
+  skinPath: string;
+  nick: string;
+  registrationDate: string;
+  isActivated: boolean;
+  email: string;
 }
 
 const Profile: React.FC<ProfileProps> = ({
@@ -22,10 +22,10 @@ const Profile: React.FC<ProfileProps> = ({
   isActivated,
   email,
 }) => {
-  const [choosedItem, setChoosedItem] = useState<string>("settings")
-  const settings = () => setChoosedItem("settings")
-  const achievements = () => setChoosedItem("achievements")
-  const privileges = () => setChoosedItem("privileges")
+  const [choosedItem, setChoosedItem] = useState<string>("settings");
+  const settings = () => setChoosedItem("settings");
+  const achievements = () => setChoosedItem("achievements");
+  const privileges = () => setChoosedItem("privileges");
 
   return (
     <LayoutGroup>
@@ -123,7 +123,7 @@ const Profile: React.FC<ProfileProps> = ({
         </motion.div>
       </motion.section>
     </LayoutGroup>
-  )
-}
+  );
+};
 
-export default observer(Profile)
+export default observer(Profile);

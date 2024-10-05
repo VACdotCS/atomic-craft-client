@@ -1,35 +1,35 @@
-import React from "react"
-import { motion } from "framer-motion"
-import styles from "@/styles/Habs/Page.module.scss"
-import Image from "next/image"
+import React from "react";
+import { motion } from "framer-motion";
+import styles from "@/styles/Habs/Page.module.scss";
+import Image from "next/image";
 
-const IMAGES_URL = process.env.DOMAIN_URL_IMAGES
+const IMAGES_URL = process.env.DOMAIN_URL_IMAGES;
 
 interface serverInfo {
-  id: string
-  title: string
-  version: string
-  isOnline: boolean
-  online: number
-  description: string
-  mods: Array<string>
+  id: string;
+  title: string;
+  version: string;
+  isOnline: boolean;
+  online: number;
+  description: string;
+  mods: Array<string>;
 }
 
 interface ItemProps {
-  id: string
-  data: Array<serverInfo>
+  id: string;
+  data: Array<serverInfo>;
 }
 
 const chooseGear = (n: number | undefined) => {
-  const index = 100 / 85
+  const index = 100 / 85;
   // @ts-ignore
-  return Math.round(n / index)
-}
+  return Math.round(n / index);
+};
 
 export const Item: React.FC<ItemProps> = ({ id, data }) => {
-  const item = data.find((value) => value.id == id)
-  const imageId = chooseGear(item?.online)
-  const imagePath = item?.title.split(" ").join("_")
+  const item = data.find((value) => value.id == id);
+  const imageId = chooseGear(item?.online);
+  const imagePath = item?.title.split(" ").join("_");
 
   return (
     <>
@@ -113,5 +113,5 @@ export const Item: React.FC<ItemProps> = ({ id, data }) => {
         </motion.section>
       </motion.section>
     </>
-  )
-}
+  );
+};

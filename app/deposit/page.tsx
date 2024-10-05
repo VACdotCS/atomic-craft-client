@@ -1,19 +1,19 @@
-"use client"
-import { observer } from "mobx-react-lite"
-import React, { useContext, useState } from "react"
-import styles from "@/styles/Deposit/global.module.scss"
-import { Context } from "@/components/GlobalContextProvider"
-import { useRouter } from "next/navigation"
-import * as Yup from "yup"
-import { Field, Form, Formik } from "formik"
-import { AnimatePresence, motion } from "framer-motion"
-import UMoneyLogo from "@/images/iomoney.png"
-import Image from "next/image"
-import Unauthorized from "@/components/Unauthorized"
+"use client";
+import { observer } from "mobx-react-lite";
+import React, { useContext, useState } from "react";
+import styles from "@/styles/Deposit/global.module.scss";
+import { Context } from "@/components/GlobalContextProvider";
+import { useRouter } from "next/navigation";
+import * as Yup from "yup";
+import { Field, Form, Formik } from "formik";
+import { AnimatePresence, motion } from "framer-motion";
+import UMoneyLogo from "@/images/iomoney.png";
+import Image from "next/image";
+import Unauthorized from "@/components/Unauthorized";
 
 interface UmoneyForm {
-  sum: number
-  toggle: boolean
+  sum: number;
+  toggle: boolean;
 }
 
 const UmoneyScheme = Yup.object().shape({
@@ -22,27 +22,27 @@ const UmoneyScheme = Yup.object().shape({
     .min(2, "Минимум 2 рубля")
     .integer("Число должно быть целым"),
   toggle: Yup.bool().oneOf([true], "Необходимо согласиться с правилами"),
-})
+});
 
 function DepositPage() {
-  const { store } = useContext(Context)
-  const router = useRouter()
-  const [loader, setLoader] = useState<boolean>(false)
+  const { store } = useContext(Context);
+  const router = useRouter();
+  const [loader, setLoader] = useState<boolean>(false);
 
   const initialValues: UmoneyForm = {
     sum: 2,
     toggle: false,
-  }
+  };
 
   if (!store.isAuth) {
-    return <Unauthorized />
+    return <Unauthorized />;
   } else {
     if (!store.user.isActivated) {
       return (
         <div className={styles.main}>
           Подтвердите адрес электронной почты для совершения платежей
         </div>
-      )
+      );
     } else {
       return (
         <>
@@ -50,13 +50,13 @@ function DepositPage() {
             <Formik
               initialValues={initialValues}
               onSubmit={async (values, actions) => {
-                setLoader(true)
+                setLoader(true);
                 if (values.toggle) {
                   store.umoney_request_payment(values.sum).then((res) => {
-                    router.push(res.redirect)
-                  })
+                    router.push(res.redirect);
+                  });
                 }
-                setLoader(false)
+                setLoader(false);
               }}
               validationSchema={UmoneyScheme}
             >
@@ -145,9 +145,9 @@ function DepositPage() {
             </div>
           </div>
         </>
-      )
+      );
     }
   }
 }
 
-export default observer(DepositPage)
+export default observer(DepositPage);

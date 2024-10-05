@@ -1,16 +1,16 @@
-"use client"
-import React, { useContext } from "react"
-import Profile from "@/components/Profile"
-import "react-toastify/scss/main.scss"
-import { Context } from "@/components/GlobalContextProvider"
-import { observer } from "mobx-react-lite"
-import Unauthorized from "@/components/Unauthorized"
+"use client";
+import React, { useContext } from "react";
+import Profile from "@/components/Profile";
+import "react-toastify/scss/main.scss";
+import { Context } from "@/components/GlobalContextProvider";
+import { observer } from "mobx-react-lite";
+import Unauthorized from "@/components/Unauthorized";
 
 function ProfilePage() {
-  const { store } = useContext(Context)
+  const { store } = useContext(Context);
 
   if (!store.isAuth) {
-    return <Unauthorized />
+    return <Unauthorized />;
   }
 
   return (
@@ -25,7 +25,7 @@ function ProfilePage() {
         />
       )}
     </>
-  )
+  );
 }
 
-export default observer(ProfilePage)
+export default observer(ProfilePage);

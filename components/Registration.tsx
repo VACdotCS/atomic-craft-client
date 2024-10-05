@@ -1,21 +1,21 @@
-"use client"
-import * as React from "react"
-import { Form, Formik, Field } from "formik"
-import * as Yup from "yup"
-import { Context } from "@/components/GlobalContextProvider"
-import { useContext, useEffect, useState } from "react"
-import { observer } from "mobx-react-lite"
-import styles from "@/styles/Nav/Reg.module.scss"
-import { AnimatePresence, motion } from "framer-motion"
-import ReCAPTCHA from "react-google-recaptcha"
+"use client";
+import * as React from "react";
+import { Form, Formik, Field } from "formik";
+import * as Yup from "yup";
+import { Context } from "@/components/GlobalContextProvider";
+import { useContext, useEffect, useState } from "react";
+import { observer } from "mobx-react-lite";
+import styles from "@/styles/Nav/Reg.module.scss";
+import { AnimatePresence, motion } from "framer-motion";
+import ReCAPTCHA from "react-google-recaptcha";
 
 interface MyFormValues {
-  nickname: string
-  passwd: string
-  verify: string
-  email: string
-  toggle: boolean
-  captcha: boolean
+  nickname: string;
+  passwd: string;
+  verify: string;
+  email: string;
+  toggle: boolean;
+  captcha: boolean;
 }
 
 const SignUpScheme = Yup.object().shape({
@@ -30,17 +30,17 @@ const SignUpScheme = Yup.object().shape({
   ),
   email: Yup.string().required("Забыли email").email("Email введён неверно"),
   toggle: Yup.bool().oneOf([true], "Необходимо согласиться с правилами"),
-})
+});
 
 export const Registration: React.FC<{}> = () => {
-  const { store } = useContext(Context)
-  const [Confirmed, setConfirmed] = useState<boolean>(false)
-  const [loader, setLoader] = useState<boolean>(false)
-  const [submitted, setSubmitted] = useState<boolean>(false)
-  const [screenWidth, setScreenWidth] = useState<number>(0)
+  const { store } = useContext(Context);
+  const [Confirmed, setConfirmed] = useState<boolean>(false);
+  const [loader, setLoader] = useState<boolean>(false);
+  const [submitted, setSubmitted] = useState<boolean>(false);
+  const [screenWidth, setScreenWidth] = useState<number>(0);
 
   // @ts-ignoredq
-  const key: string = process.env.CAPTCHA_KEY
+  const key: string = process.env.CAPTCHA_KEY;
 
   const initialValues: MyFormValues = {
     nickname: "",
@@ -49,11 +49,11 @@ export const Registration: React.FC<{}> = () => {
     toggle: false,
     email: "",
     captcha: false,
-  }
+  };
 
   useEffect(() => {
-    setScreenWidth(window.innerWidth)
-  }, [])
+    setScreenWidth(window.innerWidth);
+  }, []);
 
   return (
     <div>
@@ -61,31 +61,31 @@ export const Registration: React.FC<{}> = () => {
         initialValues={initialValues}
         onSubmit={async (values, actions) => {
           if (!Confirmed) {
-            actions.setFieldError("captcha", "Подтвердите капчу!")
+            actions.setFieldError("captcha", "Подтвердите капчу!");
           } else {
-            actions.setSubmitting(true)
-            setLoader(true)
+            actions.setSubmitting(true);
+            setLoader(true);
             await store
               .registration(values.nickname, values.passwd, values.email)
               .then((res) => {
                 if (res) {
                   if (res?.data?.message.includes("Почта")) {
-                    actions.setFieldError("email", res?.data?.message)
+                    actions.setFieldError("email", res?.data?.message);
                   }
                   if (res?.data?.message.includes("ник")) {
-                    actions.setFieldError("nickname", res?.data?.message)
+                    actions.setFieldError("nickname", res?.data?.message);
                   }
-                  actions.setSubmitting(false)
-                  setLoader(false)
+                  actions.setSubmitting(false);
+                  setLoader(false);
                 } else {
-                  setLoader(false)
-                  setSubmitted(true)
+                  setLoader(false);
+                  setSubmitted(true);
                   setTimeout(() => {
-                    location.replace("/")
-                  }, 2000)
+                    location.replace("/");
+                  }, 2000);
                 }
-                setLoader(false)
-              })
+                setLoader(false);
+              });
           }
         }}
         validationSchema={SignUpScheme}
@@ -252,7 +252,7 @@ export const Registration: React.FC<{}> = () => {
         )}
       </Formik>
     </div>
-  )
-}
+  );
+};
 
-export default observer(Registration)
+export default observer(Registration);
