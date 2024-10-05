@@ -1,0 +1,128 @@
+.main {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  position: relative;
+  gap: 0.5vw;
+
+  h1 {
+    font-family: Minecraft;
+    text-decoration: underline;
+  }
+
+  margin-left: calc(5% + 8px);
+  margin-top: 5%;
+}
+
+.team_wrapper {
+  background-color: rgba(#E98D09, 0.7);
+  width: 50%;
+  border-radius: 1vw;
+  height: 88vh;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+
+  h1 {
+    font-size: 1.3vw;
+  }
+}
+
+.team {
+  width: 85%;
+  height: 78vh;
+  border-radius: 1vw;
+  padding: 1% 1% 1% 5%;
+  display: flex;
+  flex-flow: row wrap;
+  gap: 4%;
+  overflow-y: scroll;
+  scroll-behavior: auto;
+}
+
+.team::-webkit-scrollbar {
+  display: block;
+  width: 10px;
+  background-color: white;
+  border-radius: 5px;
+  height: 2px;
+}
+
+.team::-webkit-scrollbar-thumb {
+  background: forestgreen;
+  border-radius: 5px;
+}
+
+.about, .social {
+  background-color: #EFD08F;
+  border-radius: 1vw;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+}
+
+.about {
+  height: 66vh;
+  padding-left: 2%;
+  padding-right: 2%;
+  h1 {
+    font-size: 1.3vw;
+  }
+
+  h2 {
+    font-family: Minecraft;
+    font-size: 1.5vw;
+    text-decoration: underline;
+  }
+}
+
+.social {
+  height: 22vh;
+  position: relative;
+  h1 {
+    font-size: 1.3vw;
+  }
+}
+
+.right {
+  display: flex;
+  flex-flow: column nowrap;
+  height: 88vh;
+  width: calc(43% + 15px);
+  gap: 0.5vw;
+}
+
+.links {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  gap: 5%;
+  margin-top: 2%;
+  margin-left: 1.5%;
+
+  .images {
+    position: relative;
+    height: 4vw;
+    width: 4vw;
+  }
+
+  .topcraft {
+    position: absolute;
+    height: 3vw;
+    width: 8vw;
+    right: 7%;
+    top: 46%;
+    font-family: Minecraft;
+    border: solid 2px black;
+  }
+}
+
+.text {
+  font-family: Minecraft;
+  font-size: 1.4vw;
+  margin-left: 2%;
+  margin-right: 2%;
+  text-align: center;
+  user-select: none;
+}

@@ -1,0 +1,576 @@
+/*!********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[5].oneOf[9].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[5].oneOf[9].use[3]!./node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[5].oneOf[9].use[4]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[5].oneOf[9].use[5]!./styles/Habs/Page.module.scss ***!
+  \********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+.Page_general__d8iFV {
+  position: relative;
+  overflow: hidden;
+  border: solid rgba(255, 165, 0, 0.5);
+  width: 80%;
+  height: 75vh;
+  margin: 110px auto;
+  border-radius: 20px;
+  background-color: rgba(247, 242, 239, 0.7);
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+.Page_servers_wrapper__h860_ {
+  border-radius: 20px;
+  border: solid rgba(0, 0, 255, 0.3);
+  height: 71vh;
+  width: 75%;
+  background-color: rgba(247, 255, 239, 0.7);
+  margin: 1% 1% 0 1%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.Page_servers__FUuUr {
+  height: 66vh;
+  width: 99%;
+  background-color: rgba(247, 255, 239, 0.7);
+  margin: 1% 1% 1% 1%;
+  display: flex;
+  flex-flow: row wrap;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+}
+
+.Page_servers__FUuUr::-webkit-scrollbar {
+  display: block;
+  width: 6px;
+  background-color: white;
+  border-radius: 5px;
+  height: 2px;
+}
+
+.Page_servers__FUuUr::-webkit-scrollbar-thumb {
+  background: darkgrey;
+  border-radius: 5px;
+}
+
+.Page_filters_wrapper__yVU3C {
+  border: solid rgb(247, 255, 239);
+  border-radius: 20px;
+  height: 71vh;
+  width: 25%;
+  background-color: rgba(247, 255, 239, 0.7);
+  margin: 1% 1% 1% 0;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.Page_filters_wrapper__yVU3C h1 {
+  font-family: Minecraft, serif;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+
+.Page_filters_wrapper__yVU3C h2 {
+  font-family: Minecraft, serif;
+  color: green;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+
+.Page_serverInfo__WYFF6 {
+  box-shadow: 4px 2px 10px rgba(0, 0, 0, 0.3);
+  border-radius: 20px;
+  height: 26vh;
+  width: 30%;
+  background-color: rgba(255, 204, 0, 0.4);
+  margin: 1% 1% 0 1%;
+  list-style-type: none;
+  overflow: hidden;
+  position: relative;
+  transition: all 0.2s ease-in-out;
+}
+
+.Page_serverInfo__WYFF6:hover {
+  transform: scale3d(102%, 102%, 102%);
+  box-shadow: 0 0 10px;
+}
+
+.Page_serverInfoOpen__1ZNnM {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 200;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  flex-flow: column nowrap;
+  overflow: hidden;
+}
+
+.Page_cardOpenLink__Z37lU {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.Page_cardLink__ouZRh {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10;
+}
+
+.Page_isOnline__jhFxB {
+  position: absolute;
+  top: 5%;
+  left: 5%;
+  z-index: 1;
+  width: 20px;
+  height: 20px;
+  background-color: chartreuse;
+  border-radius: 30px;
+}
+
+.Page_imageWrapper__WhBL7 {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 30%;
+  overflow: hidden;
+}
+
+.Page_imageWrapper_card__SDvwL {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.Page_imageShadow__9K7Fv {
+  position: relative;
+  margin-left: -1%;
+  margin-top: -1%;
+  filter: blur(3px) brightness(50%);
+}
+
+.Page_imageShadow_card__HCv_J {
+  position: relative;
+  margin-left: -12%;
+  margin-top: -1%;
+  filter: blur(1px) brightness(70%);
+}
+
+.Page_ImageText__x_jyz {
+  position: absolute;
+  bottom: 6%;
+  left: 2%;
+  width: 100%;
+}
+
+.Page_ImageText_card__clVPS {
+  position: absolute;
+  bottom: 5%;
+  width: 100%;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
+.Page_image_text_wrapper__bKRdo {
+  position: absolute;
+  white-space: nowrap;
+  top: 40%;
+}
+
+.Page_image_text_wrapper_card__tGsuy {
+  white-space: nowrap;
+  display: block;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
+.Page_ImageText_version__Xi23j {
+  font-family: Minecraft;
+  color: white;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  font-size: 3rem;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 20px;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding-left: 1%;
+  padding-right: 1%;
+  text-shadow: 1px 1px 0 orange, 1px -1px 0 orange, -1px 1px 0 orange, -1px -1px 0 orange;
+}
+
+.Page_ImageText_version_card__aO9R4 {
+  font-family: Minecraft;
+  color: white;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  font-size: 2rem;
+  background: rgba(255, 165, 0, 0.5);
+  border-radius: 20px;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding-left: 2%;
+  padding-right: 2%;
+}
+
+.Page_ImageText_title__OO1v4 {
+  font-family: Minecraft;
+  color: white;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  font-size: 4rem;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 20px;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding-right: 1%;
+  padding-left: 1%;
+  text-shadow: 1px 1px 0 red, 1px -1px 0 red, -1px 1px 0 orange, -1px -1px 0 orange;
+}
+
+.Page_ImageText_title_card__u_OW1 {
+  font-family: Minecraft;
+  color: white;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  font-size: 2rem;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding-right: 3%;
+  padding-left: 2%;
+  margin-top: 1%;
+}
+
+.Page_gear_wrapper__pulzI {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: -moz-fit-content;
+  width: fit-content;
+  float: left;
+  margin-left: 75%;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+
+.Page_gear__7pHM3 {
+  -webkit-user-drag: none;
+}
+
+.Page_onlineNum__ptV7d {
+  position: fixed;
+  font-size: 30px;
+  background-image: linear-gradient(45deg, #f3ec78, #af4261);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: Minecraft;
+}
+
+.Page_titleImage__zgSZS {
+  position: absolute;
+  left: 8px;
+  top: 25px;
+}
+
+.Page_Card_content__Pfh4F {
+  width: 50%;
+  height: 100%;
+  background: #F5F6F6;
+  overflow: hidden;
+  border-radius: 20px;
+  margin-top: 1%;
+  margin-bottom: 1%;
+}
+
+.Page_close__UIohe {
+  position: absolute;
+  top: 0;
+  right: 10px;
+  width: 35px;
+  height: 35px;
+  z-index: 999999;
+  cursor: pointer;
+}
+
+.Page_close__UIohe:before,
+.Page_close__UIohe:after {
+  content: "";
+  position: absolute;
+  top: 21px;
+  left: 10px;
+  width: 26px;
+  height: 4px;
+  background: #e62f57;
+}
+
+.Page_close__UIohe:before {
+  transform: rotate(45deg);
+}
+
+.Page_close__UIohe:after {
+  transform: rotate(-45deg);
+}
+
+.Page_serverContent__Tv4kQ {
+  min-height: 100%;
+  background: rgba(241, 241, 241, 0.8);
+  margin-top: -2%;
+  overflow: hidden;
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+.Page_s_description__78psi {
+  display: flex;
+  flex-flow: column nowrap;
+  width: 59%;
+  background-color: rgba(255, 0, 0, 0.15);
+  border-radius: 20px;
+  margin-top: 3%;
+  margin-left: 1%;
+  margin-bottom: 27%;
+  align-items: center;
+  overflow-y: auto;
+}
+.Page_s_description__78psi .Page_description_wrapper__Yi7Ox {
+  overflow: auto;
+  height: 57vh;
+  margin-right: 1%;
+  scroll-behavior: smooth;
+  margin-top: 2%;
+}
+.Page_s_description__78psi .Page_description_wrapper__Yi7Ox::-webkit-scrollbar {
+  display: block;
+  width: 8px;
+  background-color: orange;
+  border-radius: 5px;
+  height: 8px;
+  position: relative;
+}
+.Page_s_description__78psi .Page_description_wrapper__Yi7Ox::-webkit-scrollbar-thumb {
+  background: #1A182F;
+  border-radius: 5px;
+}
+.Page_s_description__78psi .Page_text__EjdyD {
+  padding-left: 2%;
+  padding-right: 1%;
+  margin-top: -2%;
+  font-size: xx-large;
+  font-family: Oswald;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+
+.Page_s_description__78psi h1 {
+  font-family: Minecraft;
+  text-align: center;
+  margin-bottom: -1%;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+
+.Page_right__YiTUY {
+  display: flex;
+  flex-flow: column nowrap;
+  width: 40%;
+  border-radius: 20px;
+  background-color: rgba(255, 165, 0, 0.15);
+  margin: 3% 1% 27% 5px;
+}
+
+.Page_right__YiTUY h1 {
+  font-family: Minecraft;
+  text-align: center;
+  margin-bottom: -1%;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+
+.Page_right_border__4HDKL {
+  background-color: red;
+  min-width: 3px;
+  margin-top: 2%;
+  filter: blur(2px);
+}
+
+.Page_mods__9ADVP {
+  display: flex;
+  flex-flow: row wrap;
+  margin-top: 2%;
+  height: -moz-fit-content;
+  height: fit-content;
+  border-radius: 20px;
+}
+
+.Page_mods_item__5UqwC {
+  background-color: #EFD08F;
+  border-radius: 20px;
+  height: 25px;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding-left: 2%;
+  padding-right: 2%;
+  margin-left: 2%;
+  margin-top: 1%;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  text-align: center;
+  font-family: Minecraft;
+  padding-top: 2%;
+}
+
+@media screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 1) {
+  .Page_general__d8iFV {
+    position: relative;
+    overflow: hidden;
+    border: solid orange;
+    width: 80%;
+    height: 68vh;
+    margin: 110px auto;
+    border-radius: 20px;
+    background-color: rgba(247, 242, 239, 0.7);
+    display: flex;
+    flex-flow: row nowrap;
+  }
+  .Page_servers_wrapper__h860_ {
+    border: solid blue;
+    border-radius: 20px;
+    height: 64vh;
+    width: 75%;
+    background-color: rgba(247, 255, 239, 0.7);
+    margin: 1% 1% 0 1%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
+  .Page_servers__FUuUr {
+    height: 58vh;
+    width: 99%;
+    background-color: rgba(247, 255, 239, 0.7);
+    margin: 1% 1% 1% 0;
+    display: flex;
+    flex-flow: row wrap;
+    overflow-y: auto;
+    scroll-behavior: smooth;
+  }
+  .Page_servers__FUuUr::-webkit-scrollbar {
+    display: block;
+    width: 8px;
+    background-color: orange;
+    border-radius: 5px;
+    height: 2px;
+  }
+  .Page_servers__FUuUr::-webkit-scrollbar-thumb {
+    background: #1A182F;
+    border-radius: 5px;
+  }
+  .Page_filters_wrapper__yVU3C {
+    border: solid rgb(247, 255, 239);
+    border-radius: 20px;
+    height: 64vh;
+    width: 25%;
+    background-color: rgba(247, 255, 239, 0.7);
+    margin: 1% 1% 1% 0;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+  }
+  .Page_filters_wrapper__yVU3C h1 {
+    font-family: Minecraft, serif;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+            user-select: none;
+  }
+  .Page_filters_wrapper__yVU3C h2 {
+    font-family: Minecraft, serif;
+    color: green;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+            user-select: none;
+  }
+  .Page_serverInfo__WYFF6 {
+    border: solid red;
+    border-radius: 20px;
+    height: 26vh;
+    width: 30%;
+    background-color: white;
+    margin: 1% 1% 1% 1%;
+    list-style-type: none;
+    overflow: hidden;
+    position: relative;
+  }
+  .Page_serverInfoOpen__1ZNnM {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 200;
+    width: 100%;
+    height: 100%;
+    background: greenyellow;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column nowrap;
+  }
+  .Page_Card_content__Pfh4F {
+    border: solid green;
+  }
+  .Page_title__FJJXN {
+    margin-top: 0;
+  }
+  .Page_cardImage__hYMP_ {
+    margin-bottom: 0;
+  }
+  .Page_cardOpenLink__Z37lU {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+  .Page_list__2YEn4 {
+    display: flex;
+    flex-flow: row wrap;
+  }
+  .Page_overlay__82pO2 {
+    z-index: 1;
+    position: fixed;
+    background: rgba(0, 0, 0, 0.8);
+    will-change: opacity;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 990px;
+  }
+}

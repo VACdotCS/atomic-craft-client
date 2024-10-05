@@ -1,0 +1,107 @@
+.profile {
+  height: 8vh;
+  width: 20vw;
+  background-color: #EFD08F;
+  opacity: 1;
+  border-left: 3px;
+  border-color: rgba(255, 255, 255, 1);
+  border-left-style: wave;
+  //border-bottom-right-radius: 3vh;
+  border-top-right-radius: 3vh;
+}
+
+.profile .container {
+  height: inherit;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.button {
+  background: transparent;
+  border: 0;
+  margin-right: 1.5vw;
+}
+
+.nickname {
+  font-family: Minecraft;
+  font-size: 1vw;
+}
+
+.stats {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.stats h1 {
+  margin: 0 auto;
+}
+
+.imageWrapper {
+  position: relative;
+  width: 2.7vw;
+  height: 2.7vw;
+  overflow: hidden;
+  margin-left: 5%;
+}
+
+.image {
+  box-shadow: 1px 1px 2px black;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+.dropdown {
+  overflow: hidden;
+  background: #EFD08F;
+  width: 19.66vw;
+  border: solid orange;
+  display: flex;
+  flex-flow: column nowrap;
+
+  .menu {
+    padding: 1vw 1vw;
+    width: 18vw;
+    display: flex;
+    flex-direction: column;
+    a {
+      color: black;
+      font-size: 1.5vw;
+    }
+  }
+
+  .userStats {
+    padding: 1vw 1vw;
+    width: 18vw;
+    border-bottom: solid orange;
+    border-bottom-right-radius: 1vw 3vh;
+    border-bottom-width: medium;
+
+    .coinWrapper {
+      position: relative;
+      width: 2vw;
+      height: 2vw;
+      transition: all ease-in-out 0.25s;
+      -webkit-user-drag: none;
+    }
+
+    .balance {
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: center;
+      gap: 5%;
+
+      .balanceSpan {
+        font-size: 1.5vw;
+        font-family: Minecraft;
+      }
+    }
+
+  }
+}
+
+.stats p {
+  margin: 0 auto;
+  font-size: 1vw;
+}

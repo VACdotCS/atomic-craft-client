@@ -1,0 +1,166 @@
+.main {
+  position: relative;
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 2vw;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20vh;
+  background: #F5F6F6;
+  border-radius: 2vw;
+  border: solid gray 5px;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 2% 2% 2% 2%;
+}
+
+.form {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-content: center;
+  gap: 2vh;
+
+
+  h1 {
+    font-family: Minecraft;
+    text-align: center;
+    font-size: 2vw;
+    margin: 1px;
+    margin-bottom: 3vh;
+  }
+
+  .field {
+    width: 15vw;
+    height: 5vh;
+    text-align: center;
+    border-radius: 1vw;
+    margin-left: auto;
+    margin-right: auto;
+
+    font-size: 2vh;
+    font-family: Minecraft;
+  }
+
+  .error {
+    margin-left: auto;
+    margin-right: auto;
+    list-style-type: none;
+    background: mediumpurple;
+    border-radius: 1vw;
+    padding: 0.5vh 0.5vh 0.5vh 0.5vh;
+    font-family: Minecraft;
+    font-size: 0.75vw;
+    width: 60%;
+    text-align: center;
+  }
+
+  .checkbox {
+    margin-right: auto;
+    margin-left: auto;
+    font-family: Minecraft;
+    font-size: 0.75vw;
+    text-align: center;
+
+    .checkbox_field {
+      margin-right: 10px;
+    }
+  }
+
+  .submit {
+    font-family: Minecraft;
+    font-size: 1vw;
+    width: 12vw;
+    height: 5vh;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    border-radius: 1vh;
+    cursor: pointer;
+    transition: all ease-in-out 0.25s;
+  }
+
+  .submit:hover {
+    background: mediumpurple;
+  }
+}
+
+.loader {
+  transform: rotateZ(45deg);
+  perspective: 1000px;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  color: orange;
+}
+.loader:before,
+.loader:after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: inherit;
+  height: inherit;
+  border-radius: 50%;
+  transform: rotateX(70deg);
+  animation: 1s spin linear infinite;
+}
+.loader:after {
+  color: #FF3D00;
+  transform: rotateY(70deg);
+  animation-delay: .4s;
+}
+
+@keyframes rotate {
+  0% {
+    transform: translate(-50%, -50%) rotateZ(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotateZ(360deg);
+  }
+}
+
+@keyframes rotateccw {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(-360deg);
+  }
+}
+
+@keyframes spin {
+  0%,
+  100% {
+    box-shadow: .2em 0px 0 0px currentcolor;
+  }
+  12% {
+    box-shadow: .2em .2em 0 0 currentcolor;
+  }
+  25% {
+    box-shadow: 0 .2em 0 0px currentcolor;
+  }
+  37% {
+    box-shadow: -.2em .2em 0 0 currentcolor;
+  }
+  50% {
+    box-shadow: -.2em 0 0 0 currentcolor;
+  }
+  62% {
+    box-shadow: -.2em -.2em 0 0 currentcolor;
+  }
+  75% {
+    box-shadow: 0px -.2em 0 0 currentcolor;
+  }
+  87% {
+    box-shadow: .2em -.2em 0 0 currentcolor;
+  }
+}
+
+.logo {
+  position: relative;
+  width: 10vw;
+  height: 2vw;
+}

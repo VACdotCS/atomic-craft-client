@@ -1,0 +1,48 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+  flex-flow: column nowrap;
+  background-color: #f3ec78;
+  min-height: 5vh;
+  padding: 1% 1% 1% 1%;
+  border-radius: 1vw;
+  width: 25%;
+}
+
+.image {
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+}
+
+.position {
+  font-family: Minecraft;
+  font-size: 0.8vw;
+  margin-top: 5%;
+  color: darkgreen;
+  user-select: none;
+  text-align: center;
+}
+
+.nickname {
+  color: white;
+  font-family: Minecraft;
+  font-size: 1vw;
+  background-color: rgba(black, 0.2);
+  margin-bottom: 1%;
+  user-select: none;
+}
+
+.love {
+  user-select: none;
+  font-family: SweetMavka;
+  font-size: 0.9vw;
+  word-wrap: break-word;
+  text-align: center;
+  width: 75%;
+}
+
+.skinWrapper {
+  position: relative;
+  width: 8vw;
+  height: 15vw;
+}

@@ -1,0 +1,210 @@
+.field {
+  border: 0.2vw solid gray;
+  border-radius: 0.8vw;
+  height: 2vw;
+  margin-top: 20px;
+  width: 20vw;
+  font-size: 1vw;
+}
+
+.field:focus{
+  transition: all .2s ease-in-out;
+  transform: scale(102%);
+}
+
+.form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: column nowrap;
+  width: 100%;
+
+  li {
+    font-size: 1vw;
+  }
+}
+
+.captcha {
+  position: relative;
+  display: block;
+  margin-top: 2vh;
+  margin-right: 5.5vw;
+}
+
+.form h1 {
+  margin: 10% auto 0;
+  font-family: Minecraft, serif;
+  user-select: none;
+  font-size: 2vw;
+}
+
+.form li {
+  list-style-type: none;
+}
+
+.error {
+  height: 1vw;
+  width: 18vw;
+  background: rgba(#E98D09, .5);
+  position: relative;
+  overflow: hidden;
+  border-radius: 0.4vw;
+  margin: 0.5% auto 0;
+  padding-bottom: 0;
+  text-align: center;
+}
+
+.error li {
+  font-family: sans-serif;
+}
+
+.submit {
+  background: orange;
+  border-radius: 0.5vw;
+  height: 1.5vw;
+  width: 18vw;
+  cursor: pointer;
+  transition: all 0.1s ease-in-out;
+  margin-top: 6%;
+  font-size: 1vw;
+}
+
+.submit:hover {
+  background: rgba(#FFCC33, 1);
+}
+
+.checkbox {
+  margin-top: 3%;
+  font-family: Minecraft;
+  font-size: 0.8vw;
+  text-align: center;
+  margin-bottom: 3%;
+}
+
+.submit_login {
+  background-color: orange;
+  transition: all 0.2s ease-in-out;
+  border-radius: 0.75vw;
+  height: 50%;
+  cursor: pointer;
+  margin-top: 15%;
+  font-size: 1vw;
+  width: 18vw;
+}
+
+.submit_login:hover {
+  background: rgba(#FFCC33, 1); /* For Safari 5.1 to 6.0 */
+}
+
+.imageWrapp {
+  position: absolute;
+  height: 1vw;
+  width: 2vw;
+  right: 61%;
+}
+
+.backButton {
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+  transform: translateX(-170%) scale3d(80%, 80%, 80%);
+  height: 1vw;
+  width: 2vw;
+}
+
+.backButton:hover {
+  transform: scale3d(102%, 102%, 102%) translateX(-180%);
+}
+
+.forgetSign {
+  font-family: Minecraft;
+  font-weight: bold;
+  font-size: 1vw;
+  margin-left: auto;
+  margin-right: auto;
+  cursor: pointer;
+  margin-bottom: -8%;
+  transition: all .2s ease-in-out;
+}
+
+.forgetSign:hover {
+  color: red;
+}
+
+.loader {
+  transform: rotateZ(45deg);
+  perspective: 1000px;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  color: orange;
+}
+.loader:before,
+.loader:after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: inherit;
+  height: inherit;
+  border-radius: 50%;
+  transform: rotateX(70deg);
+  animation: 1s spin linear infinite;
+}
+.loader:after {
+  color: #FF3D00;
+  transform: rotateY(70deg);
+  animation-delay: .4s;
+}
+
+@keyframes rotate {
+  0% {
+    transform: translate(-50%, -50%) rotateZ(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotateZ(360deg);
+  }
+}
+
+@keyframes rotateccw {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(-360deg);
+  }
+}
+
+@keyframes spin {
+  0%,
+  100% {
+    box-shadow: .2em 0px 0 0px currentcolor;
+  }
+  12% {
+    box-shadow: .2em .2em 0 0 currentcolor;
+  }
+  25% {
+    box-shadow: 0 .2em 0 0px currentcolor;
+  }
+  37% {
+    box-shadow: -.2em .2em 0 0 currentcolor;
+  }
+  50% {
+    box-shadow: -.2em 0 0 0 currentcolor;
+  }
+  62% {
+    box-shadow: -.2em -.2em 0 0 currentcolor;
+  }
+  75% {
+    box-shadow: 0px -.2em 0 0 currentcolor;
+  }
+  87% {
+    box-shadow: .2em -.2em 0 0 currentcolor;
+  }
+}
+
+.passwordChanged {
+  font-family: Pixel-1;
+  text-align: center
+}
+

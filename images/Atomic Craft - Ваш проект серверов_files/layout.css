@@ -1,0 +1,573 @@
+/*!*************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[5].oneOf[9].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[5].oneOf[9].use[3]!./node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[5].oneOf[9].use[4]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[5].oneOf[9].use[5]!./styles/Modal/Register.module.scss ***!
+  \*************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+.Register_background__cZk2E {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+  background: -webkit-radial-gradient(white, rgb(223, 223, 223));
+}
+
+.Register_container__7kJgN {
+  position: fixed;
+  left: 35%;
+  top: 5%;
+  width: 30%;
+  height: 80%;
+  z-index: 101;
+  background: white;
+  background-size: cover;
+  border-radius: 20px;
+  box-shadow: 1px 1px 5px black;
+}
+
+.Register_container__7kJgN div {
+  box-sizing: border-box;
+  height: 100%;
+  padding-left: 7%;
+  padding-right: 7%;
+}
+
+.Register_btn__7xVHb {
+  margin-left: 80%;
+  margin-top: 5%;
+}
+
+.Register_close__ApAhd {
+  position: absolute;
+  top: 0;
+  right: 10px;
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
+}
+
+.Register_close__ApAhd:before,
+.Register_close__ApAhd:after {
+  content: "";
+  position: absolute;
+  top: 21px;
+  left: 10px;
+  width: 26px;
+  height: 4px;
+  background: #e62f57;
+}
+
+.Register_close__ApAhd:before {
+  transform: rotate(45deg);
+}
+
+.Register_close__ApAhd:after {
+  transform: rotate(-45deg);
+}
+/*!******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[5].oneOf[9].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[5].oneOf[9].use[3]!./node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[5].oneOf[9].use[4]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[5].oneOf[9].use[5]!./styles/Nav/Reg.module.scss ***!
+  \******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+.Reg_field__dy3Cn {
+  border: 2px solid gray;
+  border-radius: 10px;
+  height: 40px;
+  margin-top: 20px;
+}
+
+.Reg_field__dy3Cn:focus {
+  transition: all 0.2s ease-in-out;
+  transform: scale(102%);
+}
+
+.Reg_form__0dK0L {
+  display: grid;
+  grid-column: inherit;
+  align-items: center;
+  justify-content: center;
+  width: 80%;
+  margin-left: 10%;
+}
+
+.Reg_form__0dK0L h1 {
+  margin: 10% auto 0;
+  font-family: Minecraft, serif;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+
+.Reg_form__0dK0L li {
+  list-style-type: none;
+}
+
+.Reg_error__dKvOO {
+  height: 10px;
+  width: 80%;
+  background: rgba(233, 141, 9, 0.5);
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  margin: 2px auto 0;
+  padding-bottom: 0;
+  text-align: center;
+}
+
+.Reg_error__dKvOO li {
+  font-family: sans-serif;
+}
+
+.Reg_submit__hiVfu {
+  background: orange;
+  border-radius: 5px;
+  height: 30px;
+  cursor: pointer;
+  transition: all 0.1s ease-in-out;
+}
+
+.Reg_submit__hiVfu:hover {
+  background: #ffcc33;
+}
+
+.Reg_checkbox__EE1ZN {
+  margin-top: 5%;
+  font-family: Minecraft;
+  font-size: 1rem;
+}
+
+.Reg_submit_login__t6zfm {
+  background-color: orange;
+  transition: all 0.2s ease-in-out;
+  border-radius: 5px;
+  height: 50%;
+  cursor: pointer;
+  margin-top: 15%;
+}
+
+.Reg_submit_login__t6zfm:hover {
+  background: #ffcc33; /* For Safari 5.1 to 6.0 */
+}
+
+.Reg_backButton__TTnpp {
+  position: absolute;
+  top: 47%;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+  transform: translateX(-160%);
+}
+
+.Reg_backButton__TTnpp:hover {
+  transform: scale3d(110%, 110%, 110%) translateX(-180%);
+}
+
+.Reg_forgetSign__7uWKq {
+  font-family: Minecraft;
+  font-weight: bold;
+  margin-left: auto;
+  margin-right: auto;
+  cursor: pointer;
+  margin-bottom: -8%;
+  transition: all 0.2s ease-in-out;
+}
+
+.Reg_forgetSign__7uWKq:hover {
+  color: red;
+}
+
+.Reg_loader__pEcsE {
+  transform: rotateZ(45deg);
+  perspective: 1000px;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  color: orange;
+}
+
+.Reg_loader__pEcsE:before,
+.Reg_loader__pEcsE:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: inherit;
+  height: inherit;
+  border-radius: 50%;
+  transform: rotateX(70deg);
+  animation: 1s Reg_spin__RyQlW linear infinite;
+}
+
+.Reg_loader__pEcsE:after {
+  color: #FF3D00;
+  transform: rotateY(70deg);
+  animation-delay: 0.4s;
+}
+
+@keyframes Reg_rotate__p8ezB {
+  0% {
+    transform: translate(-50%, -50%) rotateZ(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotateZ(360deg);
+  }
+}
+@keyframes Reg_rotateccw__Bt0MW {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(-360deg);
+  }
+}
+@keyframes Reg_spin__RyQlW {
+  0%, 100% {
+    box-shadow: 0.2em 0px 0 0px currentcolor;
+  }
+  12% {
+    box-shadow: 0.2em 0.2em 0 0 currentcolor;
+  }
+  25% {
+    box-shadow: 0 0.2em 0 0px currentcolor;
+  }
+  37% {
+    box-shadow: -0.2em 0.2em 0 0 currentcolor;
+  }
+  50% {
+    box-shadow: -0.2em 0 0 0 currentcolor;
+  }
+  62% {
+    box-shadow: -0.2em -0.2em 0 0 currentcolor;
+  }
+  75% {
+    box-shadow: 0px -0.2em 0 0 currentcolor;
+  }
+  87% {
+    box-shadow: 0.2em -0.2em 0 0 currentcolor;
+  }
+}
+.Reg_passwordChanged__XZ3co {
+  font-family: Pixel-1;
+  text-align: center;
+}
+/*!**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[5].oneOf[9].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[5].oneOf[9].use[3]!./node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[5].oneOf[9].use[4]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[5].oneOf[9].use[5]!./styles/Nav/UserProfileDropDown.module.scss ***!
+  \**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+.UserProfileDropDown_profile__m6H_i {
+  height: 60px;
+  width: 290px;
+  background-color: #EFD08F;
+  opacity: 0.8;
+  border-left: 3px;
+  border-color: rgb(255, 255, 255);
+  border-left-style: wave;
+  border-bottom-right-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+.UserProfileDropDown_profile__m6H_i .UserProfileDropDown_container__zqJr0 {
+  height: inherit;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.UserProfileDropDown_button__2cNP8 {
+  background: transparent;
+  border: 0;
+}
+
+.UserProfileDropDown_nickname__1RYAn {
+  font-family: sans-serif;
+}
+
+.UserProfileDropDown_stats__6t5dB {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.UserProfileDropDown_stats__6t5dB h1 {
+  margin: 0 auto;
+}
+
+.UserProfileDropDown_imageWrapper__EyCH2 {
+  width: 45px;
+  height: 45px;
+  overflow: hidden;
+}
+
+.UserProfileDropDown_image___jFG_ {
+  box-shadow: 1px 1px 2px black;
+  margin-left: 10px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  -webkit-user-drag: none;
+}
+
+.UserProfileDropDown_stats__6t5dB p {
+  margin: 0 auto;
+}
+/*!********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[5].oneOf[9].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[5].oneOf[9].use[3]!./node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[5].oneOf[9].use[4]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[5].oneOf[9].use[5]!./styles/Nav/Links.module.scss ***!
+  \********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+.Links_navbar___oSuv {
+  height: 60px;
+  width: 90%;
+  background-color: orange;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  z-index: 99;
+  border-radius: 20px;
+  position: fixed;
+  top: 10px;
+  left: 5px;
+  right: 5px;
+  margin: auto;
+  transition: all 0.5s ease-in-out;
+}
+
+.Links_navbar___oSuv .Links_container__tID_A {
+  height: inherit;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.Links_navbar___oSuv .Links_navbar_wrap__7c1XW {
+  position: absolute;
+  margin-left: 34%;
+}
+
+.Links_navbar___oSuv .Links_navbar_wrap__7c1XW .Links_navbar_menu__ZOxFM {
+  list-style-type: none;
+}
+
+.Links_container__tID_A section {
+  display: inline-block;
+  margin-left: 40px;
+}
+
+.Links_container__tID_A section a {
+  display: inline-block;
+  font-family: Minecraft, serif;
+  text-decoration: none;
+  color: black;
+  font-size: 40px;
+}
+
+.Links_container__tID_A section a:hover {
+  background: red; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(left, yellow, green, cyan, blue, violet); /* For Safari 5.1 to 6.0 */
+  -webkit-background-clip: text;
+          background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: -2px -2px 0 black;
+  transition-duration: 600ms;
+}
+
+.Links_navbar_menu__ZOxFM li {
+  display: inline-block;
+  margin-left: 30px;
+}
+
+.Links_navbar_menu__ZOxFM li a {
+  display: inline-block;
+  font-family: Minecraft, serif;
+  text-decoration: none;
+  margin-top: 3px;
+  color: black;
+  font-size: 20px;
+  border-bottom: 3px solid transparent;
+  padding-left: 2px;
+}
+
+.Links_navbar_menu__ZOxFM li a:hover {
+  color: white;
+  border-bottom: 3px solid;
+  border-bottom-color: green;
+  transition: all 0.15s ease-in-out;
+}
+
+.Links_navbar-wrap__URnUB {
+  display: flex;
+  flex-flow: row nowrap;
+  margin: 0 auto;
+}
+
+.Links_btns__UXR5d {
+  margin-right: 38px;
+}
+
+.Links__btn__FBkdX {
+  border-color: transparent;
+  background: transparent;
+}
+
+.Links__btn__FBkdX h1 {
+  font-family: Minecraft, serif;
+}
+
+.Links__btn__FBkdX h1:hover {
+  color: white;
+  transition: all 0.15s ease-in-out;
+  cursor: pointer;
+}
+
+.Links_loading__MwqFV {
+  background: -webkit-radial-gradient(white, rgb(223, 223, 223));
+  background-size: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@keyframes Links_fade__DmGV9 {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.Links_loader__6zf0k {
+  animation: Links_spin__Z_lE1 1s linear infinite;
+  height: 10px;
+  width: 10px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -5px;
+}
+
+@keyframes Links_spin__Z_lE1 {
+  0% {
+    box-shadow: 0px -30px #000, 10px -30px #000, 20px -20px #000, 30px -10px #000, 30px 0px #000, 30px 10px #000, 20px 20px #000, 10px 30px #000, 0px 30px transparent, -10px 30px transparent, -20px 20px transparent, -30px 10px transparent, -30px 0px transparent, -30px -10px transparent, -20px -20px transparent, -10px -30px transparent;
+  }
+  6.25% {
+    box-shadow: 0px -30px transparent, 10px -30px #000, 20px -20px #000, 30px -10px #000, 30px 0px #000, 30px 10px #000, 20px 20px #000, 10px 30px #000, 0px 30px #000, -10px 30px transparent, -20px 20px transparent, -30px 10px transparent, -30px 0px transparent, -30px -10px transparent, -20px -20px transparent, -10px -30px transparent;
+  }
+  12.5% {
+    box-shadow: 0px -30px transparent, 10px -30px transparent, 20px -20px #000, 30px -10px #000, 30px 0px #000, 30px 10px #000, 20px 20px #000, 10px 30px #000, 0px 30px #000, -10px 30px #000, -20px 20px transparent, -30px 10px transparent, -30px 0px transparent, -30px -10px transparent, -20px -20px transparent, -10px -30px transparent;
+  }
+  18.75% {
+    box-shadow: 0px -30px transparent, 10px -30px transparent, 20px -20px transparent, 30px -10px #000, 30px 0px #000, 30px 10px #000, 20px 20px #000, 10px 30px #000, 0px 30px #000, -10px 30px #000, -20px 20px #000, -30px 10px transparent, -30px 0px transparent, -30px -10px transparent, -20px -20px transparent, -10px -30px transparent;
+  }
+  25% {
+    box-shadow: 0px -30px transparent, 10px -30px transparent, 20px -20px transparent, 30px -10px transparent, 30px 0px #000, 30px 10px #000, 20px 20px #000, 10px 30px #000, 0px 30px #000, -10px 30px #000, -20px 20px #000, -30px 10px #000, -30px 0px transparent, -30px -10px transparent, -20px -20px transparent, -10px -30px transparent;
+  }
+  31.25% {
+    box-shadow: 0px -30px transparent, 10px -30px transparent, 20px -20px transparent, 30px -10px transparent, 30px 0px transparent, 30px 10px #000, 20px 20px #000, 10px 30px #000, 0px 30px #000, -10px 30px #000, -20px 20px #000, -30px 10px #000, -30px 0px #000, -30px -10px transparent, -20px -20px transparent, -10px -30px transparent;
+  }
+  37.5% {
+    box-shadow: 0px -30px transparent, 10px -30px transparent, 20px -20px transparent, 30px -10px transparent, 30px 0px transparent, 30px 10px transparent, 20px 20px #000, 10px 30px #000, 0px 30px #000, -10px 30px #000, -20px 20px #000, -30px 10px #000, -30px 0px #000, -30px -10px #000, -20px -20px transparent, -10px -30px transparent;
+  }
+  43.75% {
+    box-shadow: 0px -30px transparent, 10px -30px transparent, 20px -20px transparent, 30px -10px transparent, 30px 0px transparent, 30px 10px transparent, 20px 20px transparent, 10px 30px #000, 0px 30px #000, -10px 30px #000, -20px 20px #000, -30px 10px #000, -30px 0px #000, -30px -10px #000, -20px -20px #000, -10px -30px transparent;
+  }
+  50% {
+    box-shadow: 0px -30px transparent, 10px -30px transparent, 20px -20px transparent, 30px -10px transparent, 30px 0px transparent, 30px 10px transparent, 20px 20px transparent, 10px 30px transparent, 0px 30px #000, -10px 30px #000, -20px 20px #000, -30px 10px #000, -30px 0px #000, -30px -10px #000, -20px -20px #000, -10px -30px #000;
+  }
+  56.25% {
+    box-shadow: 0px -30px #000, 10px -30px transparent, 20px -20px transparent, 30px -10px transparent, 30px 0px transparent, 30px 10px transparent, 20px 20px transparent, 10px 30px transparent, 0px 30px transparent, -10px 30px #000, -20px 20px #000, -30px 10px #000, -30px 0px #000, -30px -10px #000, -20px -20px #000, -10px -30px #000;
+  }
+  62.5% {
+    box-shadow: 0px -30px #000, 10px -30px #000, 20px -20px transparent, 30px -10px transparent, 30px 0px transparent, 30px 10px transparent, 20px 20px transparent, 10px 30px transparent, 0px 30px transparent, -10px 30px transparent, -20px 20px #000, -30px 10px #000, -30px 0px #000, -30px -10px #000, -20px -20px #000, -10px -30px #000;
+  }
+  68.75% {
+    box-shadow: 0px -30px #000, 10px -30px #000, 20px -20px #000, 30px -10px transparent, 30px 0px transparent, 30px 10px transparent, 20px 20px transparent, 10px 30px transparent, 0px 30px transparent, -10px 30px transparent, -20px 20px transparent, -30px 10px #000, -30px 0px #000, -30px -10px #000, -20px -20px #000, -10px -30px #000;
+  }
+  75% {
+    box-shadow: 0px -30px #000, 10px -30px #000, 20px -20px #000, 30px -10px #000, 30px 0px transparent, 30px 10px transparent, 20px 20px transparent, 10px 30px transparent, 0px 30px transparent, -10px 30px transparent, -20px 20px transparent, -30px 10px transparent, -30px 0px #000, -30px -10px #000, -20px -20px #000, -10px -30px #000;
+  }
+  81.25% {
+    box-shadow: 0px -30px #000, 10px -30px #000, 20px -20px #000, 30px -10px #000, 30px 0px #000, 30px 10px transparent, 20px 20px transparent, 10px 30px transparent, 0px 30px transparent, -10px 30px transparent, -20px 20px transparent, -30px 10px transparent, -30px 0px transparent, -30px -10px #000, -20px -20px #000, -10px -30px #000;
+  }
+  87.5% {
+    box-shadow: 0px -30px #000, 10px -30px #000, 20px -20px #000, 30px -10px #000, 30px 0px #000, 30px 10px #000, 20px 20px transparent, 10px 30px transparent, 0px 30px transparent, -10px 30px transparent, -20px 20px transparent, -30px 10px transparent, -30px 0px transparent, -30px -10px transparent, -20px -20px #000, -10px -30px #000;
+  }
+  93.75% {
+    box-shadow: 0px -30px #000, 10px -30px #000, 20px -20px #000, 30px -10px #000, 30px 0px #000, 30px 10px #000, 20px 20px #000, 10px 30px transparent, 0px 30px transparent, -10px 30px transparent, -20px 20px transparent, -30px 10px transparent, -30px 0px transparent, -30px -10px transparent, -20px -20px transparent, -10px -30px #000;
+  }
+  100% {
+    box-shadow: 0px -30px #000, 10px -30px #000, 20px -20px #000, 30px -10px #000, 30px 0px #000, 30px 10px #000, 20px 20px #000, 10px 30px #000, 0px 30px transparent, -10px 30px transparent, -20px 20px transparent, -30px 10px transparent, -30px 0px transparent, -30px -10px transparent, -20px -20px transparent, -10px -30px transparent;
+  }
+}
+/*!***************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[5].oneOf[13].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[5].oneOf[13].use[3]!./node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[5].oneOf[13].use[4]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[5].oneOf[13].use[5]!./styles/globals.scss ***!
+  \***************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+@font-face {
+  font-family: Minecraft;
+  src: url(/_next/static/media/Monocraft.d1f37227.ttf) format("opentype");
+}
+@font-face {
+  font-family: Kaushan;
+  src: url(/_next/static/media/KaushanScript-Regular.e2d826b6.ttf) format("opentype");
+}
+@font-face {
+  font-family: SweetMavka;
+  src: url("/_next/static/media/Sweet Mavka Script.fad317ed.ttf") format("opentype");
+}
+@font-face {
+  font-family: Space;
+  src: url(/_next/static/media/SpaceMono-Bold.14a94d7a.ttf) format("opentype");
+}
+@font-face {
+  font-family: Oswald;
+  src: url(/_next/static/media/Oswald-Medium.3955bf51.ttf) format("opentype");
+}
+@font-face {
+  font-family: Pixel-1;
+  src: url(/_next/static/media/better-vcr_0.6ae13d3b.ttf) format("opentype");
+}
+/*!******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[5].oneOf[9].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[5].oneOf[9].use[3]!./node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[5].oneOf[9].use[4]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[5].oneOf[9].use[5]!./styles/globals.module.scss ***!
+  \******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+@charset "UTF-8";
+.globals_body__6SZTG {
+  position: relative;
+  overflow: auto;
+  scroll-behavior: smooth;
+  -ms-overflow-style: none; /* IE и Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.globals_body__6SZTG * {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  -webkit-user-drag: none;
+}
+
+.globals_body__6SZTG::-webkit-scrollbar {
+  display: none;
+}
+
+.globals_body__6SZTG::before {
+  background: url(/_next/static/media/background.28f27b83.svg) no-repeat center center;
+  background-size: cover;
+  content: " ";
+  height: 100%;
+  left: -5px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  will-change: transform;
+  z-index: -1;
+}
+
+.globals_gradient__QwV77 {
+  background: -webkit-radial-gradient(white, rgb(223, 223, 223)) no-repeat center center;
+  background-size: cover;
+  content: " ";
+  height: 100%;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  will-change: transform;
+  opacity: 0.7;
+}

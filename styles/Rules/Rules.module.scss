@@ -1,0 +1,83 @@
+.mainWrapper {
+  display: flex;
+  flex-flow: row nowrap;
+  min-width: 100%;
+  min-height: 100%;
+  margin-top: 5%;
+  margin-left: 10vw;
+  gap: 2%;
+  position: relative;
+  overflow-y: hidden;
+  .left, .right {
+    display: flex;
+    flex-flow: column nowrap;
+  }
+
+  .left {
+    min-width: 60%;
+    width: 60%;
+    overflow-y: hidden;
+    h1 {
+      text-align: center;
+    }
+  }
+
+  .right {
+    min-width: 30%;
+    width: 30%;
+  }
+}
+
+.blockWrapper {
+  display: flex;
+  flex-flow: column nowrap;
+  border-radius: 1vw;
+  background-color: rgba(orange, 0.5);
+  padding: 0 2% 2% 2%;
+  margin-top: 1%;
+  font-family: Minecraft;
+  font-size: 1.25vw;
+  width: 95%;
+
+  li {
+    color: black;
+    margin-bottom: 1%;
+
+    ul {
+      list-style-type: disc;
+      margin-top: 1%;
+    }
+
+  }
+
+  .block {
+    list-style-type: none;
+  }
+
+  p {
+    text-indent: 2vw;
+    margin-top: 1%;
+  }
+
+}
+
+.repeated {
+  color: darkred;
+}
+
+.punishment {
+  color: red;
+}
+
+.header {
+  font-family: SweetMavka;
+  font-size: 3vw;
+  color: green;
+}
+
+.imageWrapper {
+  width: 20vw;
+  height: 20vw;
+  position: fixed;
+  margin-top: 10%;
+}

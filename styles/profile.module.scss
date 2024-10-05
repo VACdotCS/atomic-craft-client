@@ -1,0 +1,45 @@
+.profile {
+  position: relative;
+  background-color: lightgrey;
+  margin: 8% 10% 0 10%;
+  border-radius: 1vw;
+  min-height: 75vh;
+  display: flex;
+  flex-flow: row nowrap;
+  z-index: 1;
+}
+
+.menu {
+  border-bottom-left-radius: 1vw;
+  border-top-left-radius: 1vw;
+  position: relative;
+  min-width: 20%;
+  background-color: darkgrey;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+}
+
+.menu div span {
+  z-index: 2;
+  position: relative;
+}
+
+.menu div:hover {
+  cursor: pointer;
+  background-color: grey;
+}
+
+.contentWrapper {
+  position: relative;
+  min-width: 80%;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+
+  .content {
+    position: absolute;
+  }
+}

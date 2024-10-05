@@ -1,0 +1,55 @@
+.mainWrapper {
+
+  margin-top: 10vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column nowrap;
+  gap: 1vh;
+  position: relative;
+}
+
+.question {
+  padding: 1% 1% 1% 2%;
+  width: 65%;
+  height: fit-content;
+  background-color: rgba(darkorange, 0.8);
+  border-radius: 1vw;
+  font-family: Minecraft;
+  font-size: 1.5vw;
+  text-align: center;
+  span {
+    color: red;
+    font-size: 2vw;
+  }
+
+  .answer {
+    border-radius: 1vw;
+    width: 100%;
+
+    span {
+      color: green;
+      font-size: 2vw;
+    }
+
+    ul {
+      list-style-type: none;
+    }
+
+    table {
+      border-collapse: collapse;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 1%;
+      margin-bottom: 1%;
+      border: 2px solid red;
+      td:nth-child(1) {
+        text-align: center;
+        padding: 1% 1% 1% 1%;
+      }
+      th, td {
+        border: 2px solid red;
+      }
+    }
+  }
+}

@@ -1,0 +1,18 @@
+.main {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+  margin-top: 25vh;
+  position: relative;
+  font-family: Minecraft;
+  font-size: 1vw;
+
+  gap: 10vh;
+
+  .imageWrapper {
+    width: 15vw;
+    height: 15vw;
+    position: relative;
+  }
+}

@@ -1,0 +1,485 @@
+.navbar {
+  height: 8vh;
+  width: 90%;
+  background-color: orange;
+  box-shadow: 0 4px 10px rgba(0,0,0,.2);
+  z-index: 99;
+  border-radius: 0 3vh 0 3vh;
+  position: fixed;
+  top: 10px;
+  left: 1%;
+  right: 1%;
+  margin: auto;
+  transition: all 0.5s ease-in-out;
+}
+
+.telephone {
+  display: none;
+}
+
+.navbar .container {
+  height: inherit;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar .navbar_wrap {
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.navbar .navbar_wrap .navbar_menu {
+  list-style-type: none;
+}
+
+.container section {
+  display: inline-block;
+  margin-left: 40px;
+}
+.container section a {
+  display: inline-block;
+  font-family: Minecraft, serif;
+  text-decoration: none;
+  color: black;
+  font-size: 2vw;
+}
+.container section a:hover {
+  background: red; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(left , yellow, green, cyan, blue, violet); /* For Safari 5.1 to 6.0 */
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: -2px -2px 0 black;
+  transition-duration: 600ms;
+}
+
+.navbar_menu li {
+  display: inline-block;
+  margin-left: 30px;
+}
+
+.navbar_menu li a {
+  display: inline-block;
+  font-family: Minecraft, serif;
+  text-decoration: none;
+  margin-top: 3px;
+  color: black;
+  font-size: 1vw;
+  border-bottom: 3px solid transparent;
+  padding-left: 2px;
+}
+
+.navbar_menu li a:hover{
+  color: white;
+  border-bottom: 3px solid;
+  border-bottom-color: green;
+  transition: all .15s ease-in-out;
+}
+
+.navbar-wrap {
+  display: flex;
+  flex-flow: row nowrap;
+  margin: 0 auto;
+}
+
+.btns {
+  margin-right: 3.5vw;
+}
+
+._btn {
+  border-color: transparent;
+  background: transparent;
+  font-size: 0.7vw;
+}
+
+._btn h1 {
+  font-family: Minecraft, serif;
+}
+
+._btn h1:hover {
+  color: white;
+  transition: all .15s ease-in-out;
+  cursor: pointer;
+}
+
+.loading {
+  background: -webkit-radial-gradient(white, rgb(223, 223, 223));
+  background-size: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+@keyframes fade{
+  0%{opacity:1;}
+  100%{opacity:0;}
+}
+
+.loader {
+  animation: spin 1s linear infinite;
+  height: 10px;
+  width: 10px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -5px;
+}
+
+@keyframes spin {
+  0% {
+    box-shadow:
+            0px -30px #000,
+            10px -30px #000,
+            20px -20px #000,
+            30px -10px #000,
+            30px 0px #000,
+            30px 10px #000,
+            20px 20px #000,
+            10px 30px #000,
+            0px 30px transparent,
+            -10px 30px transparent,
+            -20px 20px transparent,
+            -30px 10px transparent,
+            -30px 0px transparent,
+            -30px -10px transparent,
+            -20px -20px transparent,
+            -10px -30px transparent;
+  }
+  6.25% {
+    box-shadow:
+            0px -30px transparent,
+            10px -30px #000,
+            20px -20px #000,
+            30px -10px #000,
+            30px 0px #000,
+            30px 10px #000,
+            20px 20px #000,
+            10px 30px #000,
+            0px 30px #000,
+            -10px 30px transparent,
+            -20px 20px transparent,
+            -30px 10px transparent,
+            -30px 0px transparent,
+            -30px -10px transparent,
+            -20px -20px transparent,
+            -10px -30px transparent;
+  }
+  12.5% {
+    box-shadow:
+            0px -30px transparent,
+            10px -30px transparent,
+            20px -20px #000,
+            30px -10px #000,
+            30px 0px #000,
+            30px 10px #000,
+            20px 20px #000,
+            10px 30px #000,
+            0px 30px #000,
+            -10px 30px #000,
+            -20px 20px transparent,
+            -30px 10px transparent,
+            -30px 0px transparent,
+            -30px -10px transparent,
+            -20px -20px transparent,
+            -10px -30px transparent;
+  }
+  18.75% {
+    box-shadow:
+            0px -30px transparent,
+            10px -30px transparent,
+            20px -20px transparent,
+            30px -10px #000,
+            30px 0px #000,
+            30px 10px #000,
+            20px 20px #000,
+            10px 30px #000,
+            0px 30px #000,
+            -10px 30px #000,
+            -20px 20px #000,
+            -30px 10px transparent,
+            -30px 0px transparent,
+            -30px -10px transparent,
+            -20px -20px transparent,
+            -10px -30px transparent;
+  }
+  25% {
+    box-shadow:
+            0px -30px transparent,
+            10px -30px transparent,
+            20px -20px transparent,
+            30px -10px transparent,
+            30px 0px #000,
+            30px 10px #000,
+            20px 20px #000,
+            10px 30px #000,
+            0px 30px #000,
+            -10px 30px #000,
+            -20px 20px #000,
+            -30px 10px #000,
+            -30px 0px transparent,
+            -30px -10px transparent,
+            -20px -20px transparent,
+            -10px -30px transparent;
+  }
+  31.25% {
+    box-shadow:
+            0px -30px transparent,
+            10px -30px transparent,
+            20px -20px transparent,
+            30px -10px transparent,
+            30px 0px transparent,
+            30px 10px #000,
+            20px 20px #000,
+            10px 30px #000,
+            0px 30px #000,
+            -10px 30px #000,
+            -20px 20px #000,
+            -30px 10px #000,
+            -30px 0px #000,
+            -30px -10px transparent,
+            -20px -20px transparent,
+            -10px -30px transparent;
+  }
+  37.5% {
+    box-shadow:
+            0px -30px transparent,
+            10px -30px transparent,
+            20px -20px transparent,
+            30px -10px transparent,
+            30px 0px transparent,
+            30px 10px transparent,
+            20px 20px #000,
+            10px 30px #000,
+            0px 30px #000,
+            -10px 30px #000,
+            -20px 20px #000,
+            -30px 10px #000,
+            -30px 0px #000,
+            -30px -10px #000,
+            -20px -20px transparent,
+            -10px -30px transparent;
+  }
+  43.75% {
+    box-shadow:
+            0px -30px transparent,
+            10px -30px transparent,
+            20px -20px transparent,
+            30px -10px transparent,
+            30px 0px transparent,
+            30px 10px transparent,
+            20px 20px transparent,
+            10px 30px #000,
+            0px 30px #000,
+            -10px 30px #000,
+            -20px 20px #000,
+            -30px 10px #000,
+            -30px 0px #000,
+            -30px -10px #000,
+            -20px -20px #000,
+            -10px -30px transparent;
+  }
+  50% {
+    box-shadow:
+            0px -30px transparent,
+            10px -30px transparent,
+            20px -20px transparent,
+            30px -10px transparent,
+            30px 0px transparent,
+            30px 10px transparent,
+            20px 20px transparent,
+            10px 30px transparent,
+            0px 30px #000,
+            -10px 30px #000,
+            -20px 20px #000,
+            -30px 10px #000,
+            -30px 0px #000,
+            -30px -10px #000,
+            -20px -20px #000,
+            -10px -30px #000;
+  }
+  56.25% {
+    box-shadow:
+            0px -30px #000,
+            10px -30px transparent,
+            20px -20px transparent,
+            30px -10px transparent,
+            30px 0px transparent,
+            30px 10px transparent,
+            20px 20px transparent,
+            10px 30px transparent,
+            0px 30px transparent,
+            -10px 30px #000,
+            -20px 20px #000,
+            -30px 10px #000,
+            -30px 0px #000,
+            -30px -10px #000,
+            -20px -20px #000,
+            -10px -30px #000;
+  }
+  62.5% {
+    box-shadow:
+            0px -30px #000,
+            10px -30px #000,
+            20px -20px transparent,
+            30px -10px transparent,
+            30px 0px transparent,
+            30px 10px transparent,
+            20px 20px transparent,
+            10px 30px transparent,
+            0px 30px transparent,
+            -10px 30px transparent,
+            -20px 20px #000,
+            -30px 10px #000,
+            -30px 0px #000,
+            -30px -10px #000,
+            -20px -20px #000,
+            -10px -30px #000;
+  }
+  68.75% {
+    box-shadow:
+            0px -30px #000,
+            10px -30px #000,
+            20px -20px #000,
+            30px -10px transparent,
+            30px 0px transparent,
+            30px 10px transparent,
+            20px 20px transparent,
+            10px 30px transparent,
+            0px 30px transparent,
+            -10px 30px transparent,
+            -20px 20px transparent,
+            -30px 10px #000,
+            -30px 0px #000,
+            -30px -10px #000,
+            -20px -20px #000,
+            -10px -30px #000;
+  }
+  75% {
+    box-shadow:
+            0px -30px #000,
+            10px -30px #000,
+            20px -20px #000,
+            30px -10px #000,
+            30px 0px transparent,
+            30px 10px transparent,
+            20px 20px transparent,
+            10px 30px transparent,
+            0px 30px transparent,
+            -10px 30px transparent,
+            -20px 20px transparent,
+            -30px 10px transparent,
+            -30px 0px #000,
+            -30px -10px #000,
+            -20px -20px #000,
+            -10px -30px #000;
+  }
+  81.25% {
+    box-shadow:
+            0px -30px #000,
+            10px -30px #000,
+            20px -20px #000,
+            30px -10px #000,
+            30px 0px #000,
+            30px 10px transparent,
+            20px 20px transparent,
+            10px 30px transparent,
+            0px 30px transparent,
+            -10px 30px transparent,
+            -20px 20px transparent,
+            -30px 10px transparent,
+            -30px 0px transparent,
+            -30px -10px #000,
+            -20px -20px #000,
+            -10px -30px #000;
+  }
+  87.5% {
+    box-shadow:
+            0px -30px #000,
+            10px -30px #000,
+            20px -20px #000,
+            30px -10px #000,
+            30px 0px #000,
+            30px 10px #000,
+            20px 20px transparent,
+            10px 30px transparent,
+            0px 30px transparent,
+            -10px 30px transparent,
+            -20px 20px transparent,
+            -30px 10px transparent,
+            -30px 0px transparent,
+            -30px -10px transparent,
+            -20px -20px #000,
+            -10px -30px #000;
+  }
+  93.75% {
+    box-shadow:
+            0px -30px #000,
+            10px -30px #000,
+            20px -20px #000,
+            30px -10px #000,
+            30px 0px #000,
+            30px 10px #000,
+            20px 20px #000,
+            10px 30px transparent,
+            0px 30px transparent,
+            -10px 30px transparent,
+            -20px 20px transparent,
+            -30px 10px transparent,
+            -30px 0px transparent,
+            -30px -10px transparent,
+            -20px -20px transparent,
+            -10px -30px #000;
+  }
+  100% {
+    box-shadow:
+            0px -30px #000,
+            10px -30px #000,
+            20px -20px #000,
+            30px -10px #000,
+            30px 0px #000,
+            30px 10px #000,
+            20px 20px #000,
+            10px 30px #000,
+            0px 30px transparent,
+            -10px 30px transparent,
+            -20px 20px transparent,
+            -30px 10px transparent,
+            -30px 0px transparent,
+            -30px -10px transparent,
+            -20px -20px transparent,
+            -10px -30px transparent;
+  }
+}
+@media (max-width:480px)  {
+  .telephone {
+    position: absolute;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    z-index: 2000;
+    background-color: #EFD08F;
+    width: calc(100%);
+    height: calc(100% + 2000px);
+    top: -100px;
+    text-align: center;
+    font-family: Minecraft;
+
+
+    h1 {
+      margin-top: 18%;
+    }
+  }
+
+  .navbar {
+    display: none;
+  }
+}

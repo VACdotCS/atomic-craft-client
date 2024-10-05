@@ -1,0 +1,218 @@
+.general {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  position: relative;
+  gap: 5vh;
+  overflow: hidden;
+  margin-top: 10vh;
+}
+
+.main_block {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: center;
+
+  .gif_wrapper {
+    position: relative;
+    width: 17vw;
+    height: 14vw;
+    margin-left: 2vw;
+  }
+
+  .gif_wrapper_dog {
+    position: relative;
+    width: 20vw;
+    height: 18vw;
+    margin-bottom: 8vh;
+    margin-right: 2vw;
+  }
+
+  .main_left, .main_right, .main_middle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .main_left, .main_right {
+    width: 25%;
+  }
+
+  .main_middle {
+    flex-flow: column nowrap;
+    width: 50%;
+
+    .title {
+      text-align: center;
+      font-size: 0;
+      line-height: 25vh;
+
+      .logo {
+        display: inline-block;
+        margin: 0;
+        font-family: Space;
+        font-size: 10vw;
+        word-spacing: 100px;
+        user-select: none;
+        text-shadow: 5px 5px 2px orange;
+      }
+
+    }
+  }
+
+  .block_links {
+    margin-top: 3%;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    gap: 2vw;
+
+    .image_wrapper {
+      position: relative;
+      width: 2vw;
+      height: 2vw;
+    }
+
+  }
+
+  .windows, .linux {
+    cursor: pointer;
+    border: solid transparent;
+    text-decoration: none;
+    height: 6vh;
+    width: 13vw;
+    border-radius: 1vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #DD4814;
+    font-family: Minecraft, serif;
+    font-weight: bold;
+    color: black;
+    gap: 2%;
+  }
+
+  .windows:hover, .linux:hover {
+    transform: scale(102%);
+    transition: 0.3s;
+  }
+
+  .windows {
+    background-color: #F8A630;
+  }
+
+  .linux:hover {
+    transform: scale(102%);
+    transition: 0.5s;
+  }
+
+  .windows h1 {
+    border-bottom: solid transparent;
+    user-select: none;
+    font-size: 2vw;
+    margin-left: 3%;
+  }
+  .linux h1 {
+    border-bottom: solid transparent;
+    user-select: none;
+    font-size: 2vw;
+    margin-left: 3%;
+  }
+
+}
+
+.main_description {
+  display: flex;
+  flex-flow: row nowrap;
+  width: 100%;
+  justify-content: center;
+
+  .description_wrapper {
+    margin-top: -20%;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;;
+    align-items: center;
+    width: 50vw;
+  }
+
+  .description_sides {
+    width: 20vw;
+    display: flex;
+    flex-flow: column nowrap;
+    min-height: 30vh;
+  }
+
+  .torch {
+    position: relative;
+    transition: all 100ms cubic-bezier(1,1,1,1);
+    width: 12vw;
+    height: 30vh;
+  }
+}
+
+.descriptions_wrapper {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.tamuel {
+  position: absolute;
+  top: 180px;
+  left: 10%;
+  -webkit-user-drag: none;
+  user-select: none;
+}
+
+.dog {
+  position: absolute;
+  right: 10%;
+  top: 2%;
+  -webkit-user-drag: none;
+  user-select: none;
+}
+
+.chicken_wrapper {
+  right: -500px;
+  margin-top: -6%;
+  margin-bottom: 20%;
+}
+
+.arrow {
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  width: 5vw;
+  height: 10vh;
+  margin-top: 5vh;
+}
+
+.chicken {
+  position: relative;
+  width: 35vw;
+  height: 50vh;
+  margin-top: 10%;
+  transition: all 0.3s steps(1000);
+}
+
+.chicken_gif {
+  -webkit-user-drag: none;
+}
+
+.footer {
+  min-width: 100%;
+  height: 3vw;
+  background-color: orange;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 1vw;
+  font-family: Pixel-1;
+  font-size: 1vw;
+
+}

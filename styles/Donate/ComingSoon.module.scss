@@ -1,0 +1,20 @@
+.main {
+  position: relative;
+  h1 {
+    font-family: Minecraft;
+    color: black;
+    font-size: 2vw;
+    text-align: center;
+    margin-top: 15%;
+  }
+
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+
+  .imageWrapper {
+    position: relative;
+    height: 10vw;
+    width: 10vw;
+  }
+}
