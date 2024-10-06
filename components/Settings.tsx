@@ -153,7 +153,7 @@ const Settings: React.FC<SettingsProps> = ({
           Обновить плащ
         </label>
       </div>
-      <div className={styles.stripe}></div>
+      {/*<div className={styles.stripe}></div>*/}
       <section className={styles.userInfo}>
         <UserInfoBlock
             title={'Ник'}
@@ -186,71 +186,6 @@ const Settings: React.FC<SettingsProps> = ({
           </button>
         </section>
         <UserInfoBlock title={'Coming soon'} info={'Что ещё?'}/>
-        {/*<table>*/}
-        {/*  <tbody className={styles.table}>*/}
-        {/*    <tr>*/}
-        {/*      <td>*/}
-        {/*        <h1>Ник: </h1>*/}
-        {/*      </td>*/}
-        {/*      <td>*/}
-        {/*        <span className={styles.nick}>{nick}</span>*/}
-        {/*      </td>*/}
-        {/*    </tr>*/}
-        {/*    <tr>*/}
-        {/*      <td>*/}
-        {/*        <h1>Почтовый адрес:</h1>*/}
-        {/*      </td>*/}
-        {/*      <td>*/}
-        {/*        <span>{email}</span>*/}
-        {/*      </td>*/}
-        {/*    </tr>*/}
-        {/*    <tr>*/}
-        {/*      <td>*/}
-        {/*        <h1>Активирован:</h1>*/}
-        {/*      </td>*/}
-        {/*      <td>*/}
-        {/*        <span*/}
-        {/*          style={{*/}
-        {/*            color: isActivated ? "green" : "red",*/}
-        {/*          }}*/}
-        {/*        >*/}
-        {/*          {isActivated ? "Активирован" : "Не активирован"}*/}
-        {/*        </span>*/}
-        {/*      </td>*/}
-        {/*    </tr>*/}
-        {/*    <tr>*/}
-        {/*      <td>*/}
-        {/*        <h1>Пароль:</h1>*/}
-        {/*      </td>*/}
-        {/*      <td>*/}
-        {/*        <button*/}
-        {/*          className={styles.passwd}*/}
-        {/*          onClick={() => {*/}
-        {/*            setChangePasswordModalFlag(true);*/}
-        {/*            setModalAnim(true);*/}
-        {/*          }}*/}
-        {/*        >*/}
-        {/*          Изменить*/}
-        {/*        </button>*/}
-        {/*      </td>*/}
-        {/*    </tr>*/}
-        {/*    <tr>*/}
-        {/*      <td>*/}
-        {/*        <h1>Дата регистрации:</h1>*/}
-        {/*      </td>*/}
-        {/*      <td>*/}
-        {/*        <span>*/}
-        {/*          {registrationDate*/}
-        {/*            ?.split("T")[0]*/}
-        {/*            .split("-")*/}
-        {/*            .reverse()*/}
-        {/*            .join("-") + " "}*/}
-        {/*          {registrationDate?.split("T")[1].split(".")[0]}*/}
-        {/*        </span>*/}
-        {/*      </td>*/}
-        {/*    </tr>*/}
-        {/*  </tbody>*/}
-        {/*</table>*/}
       </section>
       {changePasswordModalFlag && (
           <Modal
