@@ -33,6 +33,39 @@ const Settings: React.FC<SettingsProps> = ({
   const [screenWidth, setScreenWidth] = useState<number>(0);
   const { store } = useContext(Context);
 
+  const upload = async (
+      event: React.ChangeEvent<HTMLInputElement>,
+      storeFunction: (data: FormData) => Promise<any>,
+      object: string = ''
+  ) => {
+    const files = event.target.files;
+    if (!files?.item(0)?.type.includes("png")) {
+      toast("Можно загрузить картинку только в формате .png");
+    } else {
+      const data = new FormData();
+      data.append("file", files.item(0) as Blob, `${nick}${object}.png`);
+      data.append("nick", nick);
+      await storeFunction(data).then((msg) => {
+        const isCape = object === '_cape';
+        if (msg.status !== 200) {
+          toast(msg + " Загрузите другой файл ещё раз.");
+        } else {
+          toast(
+              `${isCape ? 'Плащ' : 'Скин'} успешно загружен и будет отображён на странице после перезагрузки`,
+          );
+        }
+      });
+    }
+  }
+
+  const uploadCape = (event: React.ChangeEvent<HTMLInputElement>) => {
+    return upload(event, store.uploadCape, '_cape');
+  }
+
+  const uploadSkin = (event: React.ChangeEvent<HTMLInputElement>) => {
+    return upload(event, store.uploadSkin);
+  }
+
   useLayoutEffect(() => {
     fetch(`${process.env.DOMAIN_URL_IMAGES}/user_skins/${nick}_cape.png`).then(
       (el) => {
@@ -91,26 +124,7 @@ const Settings: React.FC<SettingsProps> = ({
           <input
             type="file"
             accept="image/*.png"
-            onChange={async (event) => {
-              const files = event.target.files;
-              if (!files?.item(0)?.type.includes("png")) {
-                toast("Можно загрузить картинку только в формате .png");
-              } else {
-                const data = new FormData();
-                // @ts-ignore
-                data.append("file", files.item(0), `${nick}.png`);
-                data.append("nick", nick);
-                await store.uploadSkin(data).then((msg) => {
-                  if (msg?.status === 200) {
-                    toast(
-                      "Скин успешно загружен и будет отображён на странице после перезагрузки",
-                    );
-                  } else {
-                    toast(msg + " Загрузите другой файл ещё раз.");
-                  }
-                });
-              }
-            }}
+            onChange={uploadSkin}
           />
           Обновить скин
         </label>
@@ -118,26 +132,7 @@ const Settings: React.FC<SettingsProps> = ({
           <input
             type="file"
             accept="image/*.png"
-            onChange={async (event) => {
-              const files = event.target.files;
-              if (!files?.item(0)?.type.includes("png")) {
-                toast("Можно загрузить картинку только в формате .png");
-              } else {
-                const data = new FormData();
-                // @ts-ignore
-                data.append("file", files.item(0), `${nick}_cape.png`);
-                data.append("nick", nick);
-                await store.uploadCape(data).then((msg) => {
-                  if (msg !== "OK") {
-                    toast(msg + " Загрузите другой файл ещё раз.");
-                  } else {
-                    toast(
-                      "Плащ успешно загружен и будет отображён на странице после перезагрузки",
-                    );
-                  }
-                });
-              }
-            }}
+            onChange={uploadCape}
           />
           Обновить плащ
         </label>

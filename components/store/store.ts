@@ -35,7 +35,6 @@ export default class Store {
   async login(nickname: string, password: string) {
     try {
       const response = await AuthService.login(nickname, password);
-      //console.log(response)
       localStorage.setItem("token", response.data.accessToken);
       this.setUser(response.data.user);
     } catch (error) {
