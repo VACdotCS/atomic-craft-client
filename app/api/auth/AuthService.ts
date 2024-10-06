@@ -22,6 +22,15 @@ export default class AuthService {
     });
   }
 
+  static async refresh() {
+    return api.get<AuthResponse>(
+        '/refresh',
+        {
+          withCredentials: true,
+        }
+    )
+  }
+
   static async logout(): Promise<void> {
     return api.post("/logout");
   }
