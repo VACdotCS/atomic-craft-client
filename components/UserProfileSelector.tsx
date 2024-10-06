@@ -80,7 +80,7 @@ const UserProfileSelector: React.FC = () => {
                 </div>
                 <span className={styles.balanceSpan}>
                   {" "}
-                  {store.user.balance} AC
+                  {store.user.balance || 0} AC
                 </span>
               </div>
             </div>

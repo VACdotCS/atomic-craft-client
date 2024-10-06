@@ -16,7 +16,7 @@ const Button: React.FC<ButtonProps> = ({ title, isSelected, onClick }) => {
           ? {
               position: "relative",
               fontFamily: "Minecraft",
-              fontSize: "1.8vw",
+              fontSize: "1.6vw",
               transition: "all 0.3s ease-in-out",
               width: "100%",
               height: "10vh",
@@ -30,7 +30,7 @@ const Button: React.FC<ButtonProps> = ({ title, isSelected, onClick }) => {
           : {
               position: "relative",
               fontFamily: "Minecraft",
-              fontSize: "1.8vw",
+              fontSize: "1.6vw",
               transition: "all 0.3s ease-in-out",
               width: "100%",
               height: "10vh",
@@ -70,7 +70,7 @@ const BgSelector: React.FC<BgSelector> = ({ title }) => {
               position: "absolute",
               top: 0,
               left: 0,
-              backgroundColor: "lightgrey",
+              backgroundColor: "orange",
               zIndex: 0,
               borderTopLeftRadius: "1vw",
             }
@@ -80,7 +80,7 @@ const BgSelector: React.FC<BgSelector> = ({ title }) => {
               position: "absolute",
               top: 0,
               left: 0,
-              backgroundColor: "lightgrey",
+              backgroundColor: "orange",
               zIndex: 0,
             }
       }

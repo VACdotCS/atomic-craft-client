@@ -2,7 +2,7 @@
   display: flex;
   flex-flow: row nowrap;
   justify-content: center;
-  margin-top: 4vh;
+  margin-top: 0;
   margin-right: 10vh;
   button {
     font-family: Minecraft;
@@ -20,16 +20,16 @@
 
 .upload_button, .upload_button_cape {
   display: inline-block;
-  background: orange linear-gradient(to bottom, orange, orangered);;
+  background: orange;
   border: none;
   border-radius: 0.5vw;
   min-height: 6%;
   width: fit-content;
   cursor: pointer;
   transition: .2s linear;
-  padding: 1% 5% 1% 5%;
+  padding: 1% 7% 1% 7%;
   font-family: Minecraft;
-  font-size: 1.5vw;
+  font-size: 1.2vw;
 
   input[type="file"] {
     display: none;
@@ -38,7 +38,7 @@
 
 .upload_button_cape {
   margin-top: 3%;
-  background: blue linear-gradient(to bottom, blue, deepskyblue);
+  background: lightgray;
 }
 
 .upload_button_cape:hover {
@@ -68,6 +68,40 @@
 .userInfo {
 
   column-gap: 2vw;
+  width: 40vw;
+  border-radius: 1vw;
+  display: flex;
+  flex-flow: row wrap;
+  padding: 5% 5%;
+  background: rgba(#E5E5E5, .75);
+  border: solid rgba(orange, .7) .2vw;
+  box-shadow: 0 0 20px rgba(orange, .5);
+
+  .userInfoSection {
+    background: rgba(#EFEFEF, .8);
+    height: 15%;
+    width: 40%;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-content: center;
+    padding: 2% 2% 2% 2%;
+    border-radius: .8vw;
+    text-overflow: clip;
+    overflow: hidden;
+    white-space: nowrap;
+
+    span:nth-child(1) {
+      color: gray;
+      font-size: .8vw;
+      margin-bottom: 5%;
+    }
+
+    span:nth-child(2) {
+      color: black;
+      font-size: 1vw;
+    }
+  }
 
   h1 {
     font-family: Minecraft;
@@ -81,28 +115,6 @@
     font-size: 1vw;
     user-select: none;
   }
-
-  .table {
-    display: table;
-    -webkit-border-horizontal-spacing: 1.5vw;
-  }
-
-  .table tr:nth-last-child(2n + 1) {
-    background-color: rgba(#E98D09, 0.5);
-  }
-
-  .table tr td:nth-child(2) {
-    text-align: center;
-    border-radius: 1vw;
-    padding-left: 1%;
-    padding-right: 1%;
-    width: fit-content;
-  }
-
-  .table tr td:nth-child(1) {
-    width: 15vw;
-    border-radius: 20px;
-  }
 }
 
 .passwd {
@@ -111,6 +123,7 @@
   transition: all 0.1s ease-in-out;
   text-align: center;
   user-select: none;
+  border-radius: .5vw;
 }
 
 .passwd:hover {

@@ -17,13 +17,29 @@ interface SettingsProps {
   email: string;
 }
 
-const Settings: React.FC<SettingsProps> = ({
-  skinPath,
-  nick,
-  registrationDate,
-  isActivated,
-  email,
+const UserInfoBlock: React.FC<{ title: string; info: string; }> = ({
+   title,
+   info,
 }) => {
+  return (
+      <section className={styles.userInfoSection}>
+          <span>
+            {title}
+          </span>
+        <span>
+            {info}
+          </span>
+      </section>
+  )
+}
+
+const Settings: React.FC<SettingsProps> = ({
+                                             skinPath,
+                                             nick,
+                                             registrationDate,
+                                             isActivated,
+                                             email,
+                                           }) => {
   const [isDataLoaded, setIsDataLoaded] = useState<boolean>(false);
   const [changePasswordModalFlag, setChangePasswordModalFlag] =
     useState<boolean>(false);
@@ -109,7 +125,7 @@ const Settings: React.FC<SettingsProps> = ({
             height={(500 * screenHeight) / 1080}
             width={(300 * screenWidth) / 1920}
             options={{
-              background: "#ECECEC",
+              //background: "#ECECEC",
             }}
             onReady={({ viewer }) => {
               viewer.animation = new WalkingAnimation();
@@ -138,80 +154,111 @@ const Settings: React.FC<SettingsProps> = ({
         </label>
       </div>
       <div className={styles.stripe}></div>
-      <div className={styles.userInfo}>
-        <table>
-          <tbody className={styles.table}>
-            <tr>
-              <td>
-                <h1>Ник: </h1>
-              </td>
-              <td>
-                <span className={styles.nick}>{nick}</span>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <h1>Почтовый адрес:</h1>
-              </td>
-              <td>
-                <span>{email}</span>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <h1>Активирован:</h1>
-              </td>
-              <td>
-                <span
-                  style={{
-                    color: isActivated ? "green" : "red",
-                  }}
-                >
-                  {isActivated ? "Активирован" : "Не активирован"}
-                </span>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <h1>Пароль:</h1>
-              </td>
-              <td>
-                <button
-                  className={styles.passwd}
-                  onClick={() => {
-                    setChangePasswordModalFlag(true);
-                    setModalAnim(true);
-                  }}
-                >
-                  Изменить
-                </button>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <h1>Дата регистрации:</h1>
-              </td>
-              <td>
-                <span>
-                  {registrationDate
-                    ?.split("T")[0]
-                    .split("-")
-                    .reverse()
-                    .join("-") + " "}
-                  {registrationDate?.split("T")[1].split(".")[0]}
-                </span>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+      <section className={styles.userInfo}>
+        <UserInfoBlock
+            title={'Ник'}
+            info={nick}
+        />
+        <UserInfoBlock
+          title={'Email'}
+          info={email}
+        />
+        <UserInfoBlock
+            title={'Активирован'}
+            info={isActivated ? 'Да' : 'Нет'}
+        />
+        <UserInfoBlock
+            title={'Дата регистрации'}
+            info={registrationDate.split('T')[0]}
+        />
+        <section className={styles.userInfoSection}>
+          <span>
+            Пароль
+          </span>
+          <button
+              className={styles.passwd}
+              onClick={() => {
+                setChangePasswordModalFlag(true);
+                setModalAnim(true);
+              }}
+          >
+            Сменить
+          </button>
+        </section>
+        <UserInfoBlock title={'Coming soon'} info={'Что ещё?'}/>
+        {/*<table>*/}
+        {/*  <tbody className={styles.table}>*/}
+        {/*    <tr>*/}
+        {/*      <td>*/}
+        {/*        <h1>Ник: </h1>*/}
+        {/*      </td>*/}
+        {/*      <td>*/}
+        {/*        <span className={styles.nick}>{nick}</span>*/}
+        {/*      </td>*/}
+        {/*    </tr>*/}
+        {/*    <tr>*/}
+        {/*      <td>*/}
+        {/*        <h1>Почтовый адрес:</h1>*/}
+        {/*      </td>*/}
+        {/*      <td>*/}
+        {/*        <span>{email}</span>*/}
+        {/*      </td>*/}
+        {/*    </tr>*/}
+        {/*    <tr>*/}
+        {/*      <td>*/}
+        {/*        <h1>Активирован:</h1>*/}
+        {/*      </td>*/}
+        {/*      <td>*/}
+        {/*        <span*/}
+        {/*          style={{*/}
+        {/*            color: isActivated ? "green" : "red",*/}
+        {/*          }}*/}
+        {/*        >*/}
+        {/*          {isActivated ? "Активирован" : "Не активирован"}*/}
+        {/*        </span>*/}
+        {/*      </td>*/}
+        {/*    </tr>*/}
+        {/*    <tr>*/}
+        {/*      <td>*/}
+        {/*        <h1>Пароль:</h1>*/}
+        {/*      </td>*/}
+        {/*      <td>*/}
+        {/*        <button*/}
+        {/*          className={styles.passwd}*/}
+        {/*          onClick={() => {*/}
+        {/*            setChangePasswordModalFlag(true);*/}
+        {/*            setModalAnim(true);*/}
+        {/*          }}*/}
+        {/*        >*/}
+        {/*          Изменить*/}
+        {/*        </button>*/}
+        {/*      </td>*/}
+        {/*    </tr>*/}
+        {/*    <tr>*/}
+        {/*      <td>*/}
+        {/*        <h1>Дата регистрации:</h1>*/}
+        {/*      </td>*/}
+        {/*      <td>*/}
+        {/*        <span>*/}
+        {/*          {registrationDate*/}
+        {/*            ?.split("T")[0]*/}
+        {/*            .split("-")*/}
+        {/*            .reverse()*/}
+        {/*            .join("-") + " "}*/}
+        {/*          {registrationDate?.split("T")[1].split(".")[0]}*/}
+        {/*        </span>*/}
+        {/*      </td>*/}
+        {/*    </tr>*/}
+        {/*  </tbody>*/}
+        {/*</table>*/}
+      </section>
       {changePasswordModalFlag && (
-        <Modal
-          isOpen={ModalAnim}
-          handleClose={() => {
-            setModalAnim(!ModalAnim);
-            setTimeout(
-              () => setChangePasswordModalFlag(!changePasswordModalFlag),
+          <Modal
+              isOpen={ModalAnim}
+              handleClose={() => {
+                setModalAnim(!ModalAnim);
+                setTimeout(
+                    () => setChangePasswordModalFlag(!changePasswordModalFlag),
               200,
             );
           }}
