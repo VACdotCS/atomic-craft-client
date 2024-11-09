@@ -1,45 +1,39 @@
-import { motion } from "framer-motion";
+import {motion, MotionStyle} from "framer-motion";
 import React from "react";
+import Image from "next/image";
 
 interface ButtonProps {
-  title: string;
+  img: any;
+  title: string,
   isSelected: boolean;
   onClick: React.MouseEventHandler;
 }
 
-const Button: React.FC<ButtonProps> = ({ title, isSelected, onClick }) => {
+const Button: React.FC<ButtonProps> = ({ img, isSelected, title, onClick }) => {
+    const style = {
+        position: "relative",
+        fontFamily: "Minecraft",
+        fontSize: "1.6vw",
+        transition: "all 0.3s ease-in-out",
+        width: "100%",
+        height: "10vh",
+        display: "flex",
+        flexFlow: "column nowrap",
+        justifyContent: "center",
+        alignItems: "center",
+        userSelect: "none",
+    } as MotionStyle;
+
   return (
     <motion.div
       onClick={onClick}
       style={
         title === "Настройки"
           ? {
-              position: "relative",
-              fontFamily: "Minecraft",
-              fontSize: "1.6vw",
-              transition: "all 0.3s ease-in-out",
-              width: "100%",
-              height: "10vh",
-              display: "flex",
-              flexFlow: "column nowrap",
-              justifyContent: "center",
-              alignItems: "center",
-              userSelect: "none",
+              ...style,
               borderTopLeftRadius: "1vw",
             }
-          : {
-              position: "relative",
-              fontFamily: "Minecraft",
-              fontSize: "1.6vw",
-              transition: "all 0.3s ease-in-out",
-              width: "100%",
-              height: "10vh",
-              display: "flex",
-              flexFlow: "column nowrap",
-              justifyContent: "center",
-              alignItems: "center",
-              userSelect: "none",
-            }
+          : style
       }
     >
       {isSelected && <BgSelector title={title} />}
@@ -48,7 +42,17 @@ const Button: React.FC<ButtonProps> = ({ title, isSelected, onClick }) => {
           position: "relative",
         }}
       >
-        {title}
+          <section style={{
+              position: 'relative',
+              width: '5.5vw',
+              height: '5.5vh',
+          }}>
+              <Image
+                  src={img}
+                  alt={'asd'}
+                  fill={true}
+              />
+          </section>
       </motion.span>
     </motion.div>
   );

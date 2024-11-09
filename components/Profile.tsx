@@ -6,6 +6,8 @@ import { observer } from "mobx-react-lite";
 import Settings from "@/components/Settings";
 import Button from "@/components/ProfileButton";
 import PlugComingSoon from "@/components/PlugComingSoon";
+import Gear from '../images/gear-svgrepo-com.svg'
+import Transfer from '../images/money-svgrepo-com.svg'
 
 interface ProfileProps {
   skinPath: string;
@@ -35,16 +37,19 @@ const Profile: React.FC<ProfileProps> = ({
             onClick={settings}
             title={"Настройки"}
             isSelected={choosedItem === "settings"}
+            img={Gear}
           />
           <Button
             onClick={achievements}
             title={"Переводы"}
             isSelected={choosedItem === "achievements"}
+            img={Transfer}
           />
           <Button
             onClick={privileges}
             title={"Привилегии"}
             isSelected={choosedItem === "privileges"}
+            img={Gear}
           />
         </motion.div>
         <motion.div className={styles.contentWrapper}>

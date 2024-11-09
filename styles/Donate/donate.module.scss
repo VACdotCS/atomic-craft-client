@@ -28,6 +28,8 @@
 }
 
 .cardFront {
+  pointer-events: all;
+
   button {
     position: absolute;
     bottom: 4vh;

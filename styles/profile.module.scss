@@ -14,11 +14,12 @@
   border-bottom-left-radius: 1vw;
   border-top-left-radius: 1vw;
   position: relative;
-  min-width: 20%;
-  background-color: rgba(#E5E5E5, .85);
+  min-width: 6%;
+  background-color: rgba(#FFFFFF , .85);
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
+  box-shadow: 0 2px 3px black;
 }
 
 .menu div span {
@@ -33,7 +34,7 @@
 
 .contentWrapper {
   position: relative;
-  min-width: 80%;
+  min-width: 100%;
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;

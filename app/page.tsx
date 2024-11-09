@@ -18,15 +18,7 @@ import image2 from "@/images/mainpage2.png";
 import image3 from "@/images/mainpage3.png";
 import image4 from "@/images/mainpage4.png";
 import image5 from "@/images/mainpage5.png";
-
-const download_launcher = (name: string) => {
-  const link = document.createElement("a");
-  link.href = `${process.env.DOMAIN_URL_IMAGES}/${name}`;
-  link.download = `${name}`;
-  document.body.appendChild(link);
-  link.click();
-  link.remove();
-};
+import {download_launcher} from "@/utils/downloading";
 
 export default function Home() {
   const [windowSize, setWindowSize] = useState({
